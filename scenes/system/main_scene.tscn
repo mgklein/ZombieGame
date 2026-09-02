@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dmtbw4gyydpei"]
+
+[ext_resource type="PackedScene" uid="uid://drxnexf68abh2" path="res://levels/prototype_level.tscn" id="1_rtgv3"]
+
+[node name="MainScene" type="Node" unique_id=1550936618]
+
+[node name="Managers" type="Node" parent="." unique_id=1583284034]
+
+[node name="PrototypeLevel" parent="." unique_id=30809116 instance=ExtResource("1_rtgv3")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=990726220]
