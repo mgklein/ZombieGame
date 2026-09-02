@@ -18,6 +18,13 @@ height = 5.0
 height = 5.0
 radius = 2.0
 
+[sub_resource type="Curve3D" id="Curve3D_ycx7s"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 0, 10, 0, -10, 0, 0, -10, 0, 0, 0, 20, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
 [node name="PrototypeLevel" type="Node3D" unique_id=30809116]
 
 [node name="Geometry" type="Node3D" parent="." unique_id=232470944]
@@ -44,5 +51,13 @@ shape = SubResource("CylinderShape3D_riqys")
 
 [node name="WorldEnvironment" parent="." unique_id=1057363427 instance=ExtResource("1_1ykrc")]
 
-[node name="PlayerController" parent="." unique_id=414205256 instance=ExtResource("2_ycx7s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="MovementPath" type="Path3D" parent="." unique_id=384265511]
+curve = SubResource("Curve3D_ycx7s")
+
+[node name="PathController" type="PathFollow3D" parent="MovementPath" unique_id=666956414]
+transform = Transform3D(0.99999636, 0, 0, 0, 0.999997, 0, 0, 0, 0.99999535, 0, 0, 0)
+
+[node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller") instance=ExtResource("2_ycx7s")]
+transform = Transform3D(1.0000037, 0, 0, 0, 1.000003, 0, 0, 0, 1.0000046, 0, 1.000003, 0)
+visible = false
+path_controller = NodePath("..")
