@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d25u4jlo26n08"]
+
+[ext_resource type="PackedScene" uid="uid://cethi4dgavt76" path="res://assets/textures/axe/fire_axe2.glb" id="1_sxbk6"]
+
+[node name="Node3D" type="Node3D" unique_id=469571615]
+
+[node name="Sketchfab_Scene" parent="." unique_id=222184254 instance=ExtResource("1_sxbk6")]
+transform = Transform3D(-0.03, 0, 2.6226832e-09, 0, 0.03, 0, -2.6226832e-09, 0, -0.03, 0, 0, 0)

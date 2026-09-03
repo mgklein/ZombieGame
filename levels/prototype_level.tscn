@@ -59,5 +59,4 @@ transform = Transform3D(0.99999636, 0, 0, 0, 0.999997, 0, 0, 0, 0.99999535, 0, 0
 
 [node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller") instance=ExtResource("2_ycx7s")]
 transform = Transform3D(1.0000037, 0, 0, 0, 1.000003, 0, 0, 0, 1.0000046, 0, 1.000003, 0)
-visible = false
 path_controller = NodePath("..")

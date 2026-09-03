@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cyhbnhbqvwypv"]
+
+[ext_resource type="Script" uid="uid://byxm52qdq1j52" path="res://assets/scripts/ui/reticle_draw.gd" id="1_284y0"]
+
+[node name="UserInterface" type="CanvasLayer" unique_id=851801993]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1746179139]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReticleDraw" type="Control" parent="CenterContainer" unique_id=382168801]
+layout_mode = 2
+script = ExtResource("1_284y0")
+thickness = 5.0
+gap_angle = 30.0
