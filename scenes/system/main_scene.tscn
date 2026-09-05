@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://drxnexf68abh2" path="res://levels/prototype_level.tscn" id="1_rtgv3"]
 [ext_resource type="PackedScene" uid="uid://cyhbnhbqvwypv" path="res://scenes/ui/user_interface.tscn" id="2_mgb3u"]
+[ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://assets/Gunnie/newstool.glb" id="3_qoi2i"]
 
 [node name="MainScene" type="Node" unique_id=1550936618]
 
@@ -10,3 +11,6 @@
 [node name="PrototypeLevel" parent="." unique_id=30809116 instance=ExtResource("1_rtgv3")]
 
 [node name="UserInterface" parent="." unique_id=851801993 instance=ExtResource("2_mgb3u")]
+
+[node name="newstool" parent="." unique_id=166389431 instance=ExtResource("3_qoi2i")]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -1.0486994, 0.79946256, -0.00892067)
