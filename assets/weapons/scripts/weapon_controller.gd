@@ -106,4 +106,4 @@ func _apply_damage_to_target(target: Node3D) -> void:
 	var health_component = target.get_node_or_null("HealthComponent")
 	
 	if health_component and health_component.has_method("take_damage"):
-		health_component.take_damage(current_weapon.damage, get_parent())
+		health_component.take_damage(current_weapon.damage, owner)

@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dlccq5nikj34w"]
 
-[ext_resource type="Texture2D" path="res://assets/textures/Woodfloor/Woodfloor.png" id="1_avg66"]
+[ext_resource type="Texture2D" uid="uid://cmje5fw0ry6f2" path="res://assets/textures/Woodfloor/Woodfloor.png" id="1_avg66"]
 [ext_resource type="PackedScene" uid="uid://b61ojcwhacduj" path="res://scenes/environment/world_environment.tscn" id="2_21g0b"]
 [ext_resource type="PackedScene" uid="uid://bbbwdi513svcb" path="res://scenes/player/player_controller.tscn" id="3_0f5xv"]
+[ext_resource type="PackedScene" uid="uid://duftxbnac6wck" path="res://scenes/props/destructible_box.tscn" id="4_21g0b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lfjr"]
 albedo_texture = ExtResource("1_avg66")
@@ -66,3 +67,6 @@ transform = Transform3D(0.99999636, 0, 0, 0, 0.999997, 0, 0, 0, 0.99999535, 0, 0
 [node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller") instance=ExtResource("3_0f5xv")]
 transform = Transform3D(1.0000037, 0, 0, 0, 1.000003, 0, 0, 0, 1.0000046, 0, 1.000003, 0)
 path_controller = NodePath("..")
+
+[node name="DestructibleBox" parent="." unique_id=5651904 instance=ExtResource("4_21g0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.41627, 0.5, 3.9809399)

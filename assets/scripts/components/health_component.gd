@@ -12,6 +12,12 @@ signal died()
 var current_health: float
 var is_alive: bool = true
 
+
+func _ready() -> void:
+	if start_at_max:
+		current_health = max_health
+
+
 func take_damage(amount: float, source: Node3D = null) -> void:
 	if not is_alive:
 		return
