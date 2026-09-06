@@ -55,6 +55,8 @@ func _perform_hitscan() -> void:
 	if result:
 		print("Hit: ", result.collider.name, " at ", result.position)
 		_spawn_impact_marker(result.position)
+		
+		_apply_damage_to_target(result.collider)
 
 
 func _spawn_impact_marker(position: Vector3) -> void:
@@ -97,3 +99,11 @@ func _spawn_projectile() -> void:
 	
 	# Set up the projectile
 	projectile.setup(velocity, current_weapon.damage)
+
+
+func _apply_damage_to_target(target: Node3D) -> void:
+	# Check if target has a HealthComponent
+	var health_component = target.get_node_or_null("HealthComponent")
+	
+	if health_component and health_component.has_method("take_damage"):
+		health_component.take_damage(current_weapon.damage, get_parent())

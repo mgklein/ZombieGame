@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://duftxbnac6wck"]
+
+[ext_resource type="Script" uid="uid://1jtevmps75ry" path="res://assets/scripts/props/destructible_box.gd" id="1_rcyp1"]
+[ext_resource type="Script" uid="uid://7ypbghoip3k0" path="res://assets/scripts/components/health_component.gd" id="2_3d104"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xe6ty"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="DestructibleBox" type="StaticBody3D" unique_id=5651904]
+script = ExtResource("1_rcyp1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1128786217]
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=967162698]
+shape = SubResource("ConcavePolygonShape3D_xe6ty")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=1676356507]
+script = ExtResource("2_3d104")
+metadata/_custom_type_script = "uid://7ypbghoip3k0"
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
