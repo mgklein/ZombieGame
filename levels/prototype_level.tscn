@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://drxnexf68abh2"]
 
 [ext_resource type="PackedScene" uid="uid://b61ojcwhacduj" path="res://scenes/environment/world_environment.tscn" id="1_1ykrc"]
-[ext_resource type="Script" uid="uid://siwau6boegsb" path="res://assets/scripts/EnvironmentLevel/prototype_level.gd" id="1_6lfjr"]
 [ext_resource type="Texture2D" uid="uid://cmje5fw0ry6f2" path="res://assets/textures/Woodfloor/Woodfloor.png" id="2_6lfjr"]
 [ext_resource type="PackedScene" uid="uid://bbbwdi513svcb" path="res://scenes/player/player_controller.tscn" id="2_ycx7s"]
 [ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://assets/Gunnie/newstool.glb" id="5_i5e4g"]
@@ -35,7 +34,6 @@ _data = {
 point_count = 3
 
 [node name="PrototypeLevel" type="Node3D" unique_id=30809116]
-script = ExtResource("1_6lfjr")
 
 [node name="Geometry" type="Node3D" parent="." unique_id=232470944]
 
@@ -72,8 +70,8 @@ transform = Transform3D(1.0000037, 0, 0, 0, 1.000003, 0, 0, 0, 1.0000046, 0, 1.0
 path_controller = NodePath("..")
 
 [node name="AreaLight3D" type="DirectionalLight3D" parent="." unique_id=1561068488]
-transform = Transform3D(0.42928073, -0.9031712, 0, 0.29852378, 0.14188948, 0.94379616, -0.85240924, -0.4051534, 0.33052847, 0, 13.757083, 0)
-light_energy = 0.208
+transform = Transform3D(0.42928073, -0.90317106, -2.2322821e-08, -0.5373083, -0.25538474, 0.80379, -0.72595996, -0.34505156, -0.5949131, 0, 13.757083, -13.248748)
+light_energy = 0.0
 
 [node name="newstool" parent="." unique_id=166389431 instance=ExtResource("5_i5e4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4080925, 2.2662225, -9.117126)

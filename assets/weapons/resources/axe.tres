@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="Weapon" format=3 uid="uid://dtjrmvh3tywiy"]
 
-[ext_resource type="PackedScene" uid="uid://cfdnpnq6a7d7y" path="res://scenes/weapons/axe_projectile.tscn" id="1_23boa"]
+[ext_resource type="PackedScene" uid="uid://xk7ehhm5xe7l" path="res://scenes/weapons/Gunnie/g_axe_projectile.tscn" id="1_23boa"]
 [ext_resource type="Script" uid="uid://617tb1cuxx2l" path="res://assets/weapons/scripts/weapon.gd" id="1_p7a75"]
-[ext_resource type="PackedScene" uid="uid://d25u4jlo26n08" path="res://scenes/weapons/axe.tscn" id="2_50ubr"]
+[ext_resource type="PackedScene" uid="uid://dixqqmfi6fjsx" path="res://scenes/weapons/Gunnie/g_axe.tscn" id="3_pgge2"]
 
 [resource]
 script = ExtResource("1_p7a75")
 projectile_speed = 10.0
-weapon_model = ExtResource("2_50ubr")
+weapon_model = ExtResource("3_pgge2")
 projectile_scene = ExtResource("1_23boa")
 weapon_position = Vector3(0.45243835, -0.6247399, -0.5533395)
 metadata/_custom_type_script = "uid://617tb1cuxx2l"
