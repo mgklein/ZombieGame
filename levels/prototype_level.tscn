@@ -1,9 +1,18 @@
 [gd_scene format=3 uid="uid://drxnexf68abh2"]
 
 [ext_resource type="PackedScene" uid="uid://b61ojcwhacduj" path="res://scenes/environment/world_environment.tscn" id="1_1ykrc"]
+[ext_resource type="Script" uid="uid://siwau6boegsb" path="res://assets/scripts/EnvironmentLevel/prototype_level.gd" id="1_6lfjr"]
+[ext_resource type="Texture2D" uid="uid://cmje5fw0ry6f2" path="res://assets/textures/Woodfloor/Woodfloor.png" id="2_6lfjr"]
 [ext_resource type="PackedScene" uid="uid://bbbwdi513svcb" path="res://scenes/player/player_controller.tscn" id="2_ycx7s"]
+[ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://assets/Gunnie/newstool.glb" id="5_i5e4g"]
+[ext_resource type="PackedScene" uid="uid://b6b3tbuscy4ow" path="res://assets/Gunnie/Bar/bar.glb" id="6_pvbb1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lfjr"]
+albedo_texture = ExtResource("2_6lfjr")
+uv1_scale = Vector3(22.255, 22.255, 22.255)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+material = SubResource("StandardMaterial3D_6lfjr")
 size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_riqys"]
@@ -26,6 +35,7 @@ _data = {
 point_count = 3
 
 [node name="PrototypeLevel" type="Node3D" unique_id=30809116]
+script = ExtResource("1_6lfjr")
 
 [node name="Geometry" type="Node3D" parent="." unique_id=232470944]
 
@@ -60,3 +70,25 @@ transform = Transform3D(0.99999636, 0, 0, 0, 0.999997, 0, 0, 0, 0.99999535, 0, 0
 [node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller") instance=ExtResource("2_ycx7s")]
 transform = Transform3D(1.0000037, 0, 0, 0, 1.000003, 0, 0, 0, 1.0000046, 0, 1.000003, 0)
 path_controller = NodePath("..")
+
+[node name="AreaLight3D" type="DirectionalLight3D" parent="." unique_id=1561068488]
+transform = Transform3D(0.42928073, -0.9031712, 0, 0.29852378, 0.14188948, 0.94379616, -0.85240924, -0.4051534, 0.33052847, 0, 13.757083, 0)
+light_energy = 0.208
+
+[node name="newstool" parent="." unique_id=166389431 instance=ExtResource("5_i5e4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4080925, 2.2662225, -9.117126)
+
+[node name="bar" parent="." unique_id=787452512 instance=ExtResource("6_pvbb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.324006, 1.6221571, -12.422504)
+
+[node name="newstool2" parent="." unique_id=1693051979 instance=ExtResource("5_i5e4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3915, 2.2655308, -9.195564)
+
+[node name="bar2" parent="." unique_id=1629283325 instance=ExtResource("6_pvbb1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4109976, 1.6221571, -12.428831)
+
+[node name="newstool3" parent="." unique_id=1220272512 instance=ExtResource("5_i5e4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.630265, 2.2655308, -9.22166)
+
+[node name="newstool4" parent="." unique_id=462197280 instance=ExtResource("5_i5e4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5616951, 2.2655313, -9.0852375)
