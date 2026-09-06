@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://drimvoo8d2nq7" path="res://assets/scripts/player/player_controller.gd" id="1_0cfoe"]
 [ext_resource type="Script" uid="uid://cgv25gjkwxvdg" path="res://assets/scripts/player/components/mouse_capture.gd" id="1_4q5nu"]
 [ext_resource type="Script" uid="uid://s2mosiyewjws" path="res://assets/scripts/player/camera_controller.gd" id="1_iivv4"]
+[ext_resource type="Script" uid="uid://7ypbghoip3k0" path="res://assets/scripts/components/health_component.gd" id="2_3y0ka"]
 [ext_resource type="Script" uid="uid://lfsbjcv1s0sw" path="res://assets/weapons/scripts/weapon_controller.gd" id="4_5tt2p"]
 [ext_resource type="Resource" uid="uid://dtjrmvh3tywiy" path="res://assets/weapons/resources/axe.tres" id="5_5afdu"]
 [ext_resource type="Script" uid="uid://by403ic3f2c5n" path="res://assets/weapons/scripts/weapon_state_machine.gd" id="6_5afdu"]
@@ -20,6 +21,10 @@
 
 [node name="PlayerController" type="CharacterBody3D" unique_id=414205256]
 script = ExtResource("1_0cfoe")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=400386396]
+script = ExtResource("2_3y0ka")
+metadata/_custom_type_script = "uid://7ypbghoip3k0"
 
 [node name="PlaceholderMesh" type="MeshInstance3D" parent="." unique_id=1924111175]
 mesh = SubResource("CapsuleMesh_bhunq")
