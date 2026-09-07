@@ -9,6 +9,6 @@ func update_rotation(rotation_input) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_move"):
-		_target_progress = path_controller.progress_ratio + 0.2
+		_target_progress = min(path_controller.progress_ratio + 0.2, 1.0)
 	
 	path_controller.progress_ratio = lerp(path_controller.progress_ratio, _target_progress, delta)

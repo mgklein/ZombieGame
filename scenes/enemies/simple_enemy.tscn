@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://d1dv8d3by2dvw"]
+
+[ext_resource type="Script" uid="uid://6pp8su502mwb" path="res://assets/scripts/enemies/simple_enemy.gd" id="1_2kgy0"]
+[ext_resource type="Script" uid="uid://7ypbghoip3k0" path="res://assets/scripts/components/health_component.gd" id="2_ho7jy"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="3_fgow6"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="4_qwvii"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="5_wlamu"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="6_cf2kt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhunq"]
+material = SubResource("StandardMaterial3D_riqys")
+size = Vector3(1, 2, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sn0t7"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
+radius = 5.0
+
+[node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251]
+script = ExtResource("1_2kgy0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=647515196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_bhunq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=6568200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_sn0t7")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=323829948]
+script = ExtResource("2_ho7jy")
+metadata/_custom_type_script = "uid://7ypbghoip3k0"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=635234048]
+target_desired_distance = 1.1
+avoidance_enabled = true
+debug_enabled = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+
+[node name="StateChart" type="Node" parent="." unique_id=1447826703]
+script = ExtResource("3_fgow6")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart" unique_id=745172713]
+script = ExtResource("4_qwvii")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateChart/Root" unique_id=1879712226]
+script = ExtResource("5_wlamu")
+
+[node name="FollowState" type="Node" parent="StateChart/Root" unique_id=550865897]
+script = ExtResource("5_wlamu")
+
+[node name="toIdle" type="Node" parent="StateChart/Root" unique_id=1573240019]
+script = ExtResource("6_cf2kt")
+to = NodePath("../IdleState")
+event = &"toIdle"
+delay_in_seconds = "0.0"
+
+[node name="toFollow" type="Node" parent="StateChart/Root" unique_id=789252668]
+script = ExtResource("6_cf2kt")
+to = NodePath("../FollowState")
+event = &"toFollow"
+delay_in_seconds = "0.0"
+
+[node name="DetectionArea" type="Area3D" parent="." unique_id=226338342]
+visible = false
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=26803936]
+shape = SubResource("SphereShape3D_bhunq")
+
+[connection signal="state_physics_processing" from="StateChart/Root/FollowState" to="." method="_on_follow_state_physics_processing"]
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
