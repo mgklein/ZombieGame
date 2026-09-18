@@ -6,7 +6,9 @@
 
 [resource]
 script = ExtResource("1_p7a75")
+max_ammo = 1
 projectile_speed = 10.0
+projectile_weight = 10.0
 weapon_model = ExtResource("2_50ubr")
 projectile_scene = ExtResource("1_23boa")
 weapon_position = Vector3(0.45243835, -0.6247399, -0.5533395)

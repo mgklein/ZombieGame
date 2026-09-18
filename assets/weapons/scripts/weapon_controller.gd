@@ -98,7 +98,10 @@ func _spawn_projectile() -> void:
 	projectile.look_at(projectile.global_position + forward, Vector3.UP)
 	
 	# Set up the projectile
-	projectile.setup(velocity, current_weapon.damage)
+	var custom_gravity = 0
+	if current_weapon.projectile_gravity:
+		custom_gravity = -current_weapon.projectile_weight
+	projectile.setup(velocity, current_weapon.damage, custom_gravity)
 
 
 func _apply_damage_to_target(target: Node3D) -> void:
