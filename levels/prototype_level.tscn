@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cmje5fw0ry6f2" path="res://assets/textures/Woodfloor/Woodfloor.png" id="2_6lfjr"]
 [ext_resource type="PackedScene" uid="uid://bbbwdi513svcb" path="res://scenes/player/player_controller.tscn" id="2_ycx7s"]
 [ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://assets/Gunnie/newstool.glb" id="5_i5e4g"]
+[ext_resource type="PackedScene" uid="uid://c6qtds4da1jdv" path="res://assets/Gunnie/Zombie Models/GB-Body.glb" id="6_i5e4g"]
 [ext_resource type="PackedScene" uid="uid://b6b3tbuscy4ow" path="res://assets/Gunnie/Bar/bar.glb" id="6_pvbb1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lfjr"]
@@ -94,3 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.630265, 2.2655308, -9.22166
 
 [node name="newstool4" parent="." unique_id=462197280 instance=ExtResource("5_i5e4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5616951, 2.2655313, -9.0852375)
+
+[node name="GB-Body" parent="." unique_id=1544173603 instance=ExtResource("6_i5e4g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.022368, 0.045955658, 3.9004576)
