@@ -13,4 +13,4 @@ class_name Weapon extends Resource
 @export var projectile_scene: PackedScene
 @export var weapon_position: Vector3 = Vector3(0.2, -0.2, -0.3)
 
-var current_projectile_speed: float = min_projectile_speed
+var current_projectile_speed: float

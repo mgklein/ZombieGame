@@ -12,6 +12,7 @@ func _ready() -> void:
 	if current_weapon:
 		spawn_weapon_model()
 		current_ammo = current_weapon.max_ammo
+		current_weapon.current_projectile_speed = current_weapon.min_projectile_speed
 
 
 func spawn_weapon_model():

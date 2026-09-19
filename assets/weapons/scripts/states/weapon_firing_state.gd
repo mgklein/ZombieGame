@@ -17,7 +17,7 @@ func _on_firing_state_entered() -> void:
 	#lockout_timer.wait_time = 2.0
 	#lockout_timer.start()
 	lockout = true
-	await get_tree().create_timer(2.5).timeout
+	await get_tree().create_timer(1.0).timeout
 	lockout = false
 
 
