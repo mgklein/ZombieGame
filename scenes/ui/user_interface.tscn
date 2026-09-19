@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cyhbnhbqvwypv"]
 
 [ext_resource type="Script" uid="uid://byxm52qdq1j52" path="res://assets/scripts/ui/reticle_draw.gd" id="1_284y0"]
+[ext_resource type="Script" uid="uid://cm8v3h18sqjym" path="res://assets/scripts/ui/user_interface.gd" id="1_hj6hg"]
 
 [node name="UserInterface" type="CanvasLayer" unique_id=851801993]
+script = ExtResource("1_hj6hg")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1746179139]
 anchors_preset = 15
@@ -16,3 +18,10 @@ layout_mode = 2
 script = ExtResource("1_284y0")
 thickness = 5.0
 gap_angle = 30.0
+
+[node name="ChargeIndicator" type="ColorRect" parent="CenterContainer" unique_id=1562352455]
+custom_minimum_size = Vector2(10, 100)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, 0)
+color = Color(0, 0.7636337, 0.2913572, 1)

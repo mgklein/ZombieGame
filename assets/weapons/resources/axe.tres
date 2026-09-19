@@ -7,7 +7,8 @@
 [resource]
 script = ExtResource("1_p7a75")
 max_ammo = 1
-projectile_speed = 10.0
+max_projectile_speed = 40.0
+min_projectile_speed = 10.0
 projectile_weight = 10.0
 weapon_model = ExtResource("2_50ubr")
 projectile_scene = ExtResource("1_23boa")

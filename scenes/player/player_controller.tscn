@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://cnbr6vgv8gw58" path="res://assets/weapons/scripts/states/weapon_idle_state.gd" id="11_mxnws"]
 [ext_resource type="Script" uid="uid://dylbvtkm8ske" path="res://assets/weapons/scripts/states/weapon_firing_state.gd" id="12_3y0ka"]
 [ext_resource type="Script" uid="uid://buv1i275ghkp0" path="res://assets/weapons/scripts/states/weapon_empty_state.gd" id="13_m6lbn"]
+[ext_resource type="Script" uid="uid://dywapiekmtrri" path="res://scenes/player/weapon_charging_state.gd" id="15_m6lbn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bhunq"]
 
@@ -72,6 +73,9 @@ script = ExtResource("8_y4pjd")
 [node name="EmptyState" type="Node" parent="WeaponStateChart/Root" unique_id=167374921]
 script = ExtResource("8_y4pjd")
 
+[node name="ChargingState" type="Node" parent="WeaponStateChart/Root" unique_id=1563647602]
+script = ExtResource("8_y4pjd")
+
 [node name="onIdle" type="Node" parent="WeaponStateChart/Root" unique_id=1041319110]
 script = ExtResource("9_mxnws")
 to = NodePath("../IdleState")
@@ -90,6 +94,12 @@ to = NodePath("../EmptyState")
 event = &"onEmpty"
 delay_in_seconds = "0.0"
 
+[node name="onCharging" type="Node" parent="WeaponStateChart/Root" unique_id=1837930095]
+script = ExtResource("9_mxnws")
+to = NodePath("../ChargingState")
+event = &"onCharging"
+delay_in_seconds = "0.0"
+
 [node name="WeaponStateMachine" type="Node" parent="." unique_id=1207905446 node_paths=PackedStringArray("weapon_controller")]
 unique_name_in_owner = true
 script = ExtResource("6_5afdu")
@@ -104,8 +114,12 @@ script = ExtResource("12_3y0ka")
 [node name="EmptyState" type="Node" parent="WeaponStateMachine" unique_id=1808390826]
 script = ExtResource("13_m6lbn")
 
+[node name="ChargingState" type="Node" parent="WeaponStateMachine" unique_id=1512295402]
+script = ExtResource("15_m6lbn")
+
 [connection signal="state_processing" from="WeaponStateChart/Root/IdleState" to="WeaponStateMachine/IdleState" method="_on_idle_state_processing"]
 [connection signal="state_entered" from="WeaponStateChart/Root/FiringState" to="WeaponStateMachine/FiringState" method="_on_firing_state_entered"]
 [connection signal="state_physics_processing" from="WeaponStateChart/Root/FiringState" to="WeaponStateMachine/FiringState" method="_on_firing_state_physics_processing"]
 [connection signal="state_entered" from="WeaponStateChart/Root/EmptyState" to="WeaponStateMachine/EmptyState" method="_on_empty_state_entered"]
 [connection signal="state_processing" from="WeaponStateChart/Root/EmptyState" to="WeaponStateMachine/EmptyState" method="_on_empty_state_processing"]
+[connection signal="state_processing" from="WeaponStateChart/Root/ChargingState" to="WeaponStateMachine/ChargingState" method="_on_charging_state_processing"]

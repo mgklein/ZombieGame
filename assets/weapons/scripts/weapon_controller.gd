@@ -94,7 +94,7 @@ func _spawn_projectile() -> void:
 	
 	# Calculate direction and velocity
 	var forward = -camera.global_transform.basis.z
-	var velocity = forward * current_weapon.projectile_speed
+	var velocity = forward * current_weapon.current_projectile_speed
 	projectile.look_at(projectile.global_position + forward, Vector3.UP)
 	
 	# Set up the projectile
