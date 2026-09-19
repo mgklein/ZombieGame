@@ -2,6 +2,8 @@ class_name SimpleEnemy
 extends GenisysEnemy
 
 @export var follow_speed: float = 3.0
+@export var model: Node3D
+
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var state_chart: StateChart = $StateChart
@@ -65,7 +67,9 @@ func _on_follow_state_physics_processing(delta: float) -> void:
 	if direction.length() > 0.01:
 		var target_rotation = atan2(direction.x, direction.z)
 		rotation.y = lerp_angle(rotation.y, target_rotation, 5.0 * delta)
-
+	
+	if model.find_child("AnimationPlayer") != null:
+		model.find_child("AnimationPlayer").play("Action_001")
 
 
 func _on_detection_area_body_entered(body: Node3D) -> void:
