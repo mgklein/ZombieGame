@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b6b3tbuscy4ow"
-path="res://.godot/imported/bar.glb-f1ab74ac649bf168d9b5f5995b097edb.scn"
+uid="uid://p6at625jepbx"
+path="res://.godot/imported/bar_stool.glb-0764060fcb791421edc822ede399b479.scn"
 
 [deps]
 
-source_file="res://assets/Gunnie/Bar/bar.glb"
-dest_files=["res://.godot/imported/bar.glb-f1ab74ac649bf168d9b5f5995b097edb.scn"]
+source_file="res://Trenchbroom/models/bar_stool.glb"
+dest_files=["res://.godot/imported/bar_stool.glb-0764060fcb791421edc822ede399b479.scn"]
 
 [params]
 

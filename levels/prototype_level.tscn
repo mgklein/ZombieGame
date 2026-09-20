@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b61ojcwhacduj" path="res://scenes/environment/world_environment.tscn" id="1_1ykrc"]
 [ext_resource type="Texture2D" uid="uid://cmje5fw0ry6f2" path="res://assets/textures/Woodfloor/Woodfloor.png" id="2_6lfjr"]
 [ext_resource type="PackedScene" uid="uid://bbbwdi513svcb" path="res://scenes/player/player_controller.tscn" id="2_ycx7s"]
-[ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://assets/Gunnie/newstool.glb" id="5_i5e4g"]
+[ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://Trenchbroom/models/bar/newstool.glb" id="5_i5e4g"]
 [ext_resource type="PackedScene" uid="uid://dy1ma2cor8cal" path="res://scenes/enemies/gb-simple_enemy.tscn" id="6_i5e4g"]
-[ext_resource type="PackedScene" uid="uid://b6b3tbuscy4ow" path="res://assets/Gunnie/Bar/bar.glb" id="6_pvbb1"]
+[ext_resource type="PackedScene" uid="uid://b6b3tbuscy4ow" path="res://Trenchbroom/models/bar/bar.glb" id="6_pvbb1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lfjr"]
 albedo_texture = ExtResource("2_6lfjr")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" format=3 uid="uid://bf1pfjwdsx8wj"]
+
+[ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_toj87"]
+[ext_resource type="Script" uid="uid://drlmgulwbjwqu" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_ts0y1"]
+[ext_resource type="Resource" uid="uid://6anqq46y5y3d" path="res://Trenchbroom/fgd/model_point/bar_stool.tres" id="2_ts0hu"]
+[ext_resource type="Resource" uid="uid://d3uukvc17knph" path="res://Trenchbroom/fgd/model_point/gb_zombie_1.tres" id="3_s3n20"]
+
+[resource]
+script = ExtResource("1_ts0y1")
+fgd_name = "ZombieGame"
+base_fgd_files = Array[Resource]([ExtResource("1_toj87")])
+entity_definitions = Array[Resource]([ExtResource("2_ts0hu"), ExtResource("3_s3n20")])
+metadata/_custom_type_script = "uid://drlmgulwbjwqu"
