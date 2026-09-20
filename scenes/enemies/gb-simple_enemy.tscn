@@ -13,14 +13,11 @@ radius = 0.4
 height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
-radius = 5.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_pitpm"]
-height = 1.6650391
+radius = 25.0
 
 [node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251 node_paths=PackedStringArray("model")]
 script = ExtResource("1_ywklh")
-follow_speed = 2223.0
+follow_speed = 1.0
 model = NodePath("GB-Body")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=6568200]
@@ -64,7 +61,6 @@ event = &"toFollow"
 delay_in_seconds = "0.0"
 
 [node name="DetectionArea" type="Area3D" parent="." unique_id=226338342]
-transform = Transform3D(4.079925, 0, 0, 0, 1, 0, 0, 0, 4.631342, 0, 0, 0)
 collision_mask = 2
 monitorable = false
 
@@ -72,10 +68,6 @@ monitorable = false
 shape = SubResource("SphereShape3D_bhunq")
 
 [node name="GB-Body" parent="." unique_id=1544173603 instance=ExtResource("7_fokv5")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1346754482]
-transform = Transform3D(1, 0, 0, 0, 1.3244847, 0, 0, 0, 1, 0, 0.9345119, 0)
-mesh = SubResource("CapsuleMesh_pitpm")
 
 [connection signal="state_physics_processing" from="StateChart/Root/FollowState" to="." method="_on_follow_state_physics_processing"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

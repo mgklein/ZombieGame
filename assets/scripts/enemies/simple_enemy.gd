@@ -68,8 +68,9 @@ func _on_follow_state_physics_processing(delta: float) -> void:
 		var target_rotation = atan2(direction.x, direction.z)
 		rotation.y = lerp_angle(rotation.y, target_rotation, 5.0 * delta)
 	
-	if model.find_child("AnimationPlayer") != null:
-		model.find_child("AnimationPlayer").play("Action_001")
+	if model != null:
+		if model.find_child("AnimationPlayer") != null:
+			model.find_child("AnimationPlayer").play("Action_001")
 
 
 func _on_detection_area_body_entered(body: Node3D) -> void:
