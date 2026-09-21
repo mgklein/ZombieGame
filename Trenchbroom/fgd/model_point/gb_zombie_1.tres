@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://d3uukvc17knph"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_62f3b"]
+[ext_resource type="PackedScene" uid="uid://dy1ma2cor8cal" path="res://scenes/enemies/gb-simple_enemy.tscn" id="2_aut8w"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_wvfes"]
+
+[resource]
+script = ExtResource("2_wvfes")
+target_map_editor = 1
+generate_size_property = true
+scene_file = ExtResource("2_aut8w")
+classname = "gb_enemy_1"
+description = "First enemy modeled on gb"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"Trenchbroom/models/gb_enemy_1.glb\", \"scale\": 32.0 }",
+"size": AABB(0, 0, 0, 0, 0, 0)
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"

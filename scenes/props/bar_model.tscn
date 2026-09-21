@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://di6jra8l4ir8j"]
+
+[ext_resource type="PackedScene" uid="uid://tveyw5siuc0f" path="res://assets/Gunnie/Bar/bar.glb" id="1_etjof"]
+
+[node name="Node3D" type="Node3D" unique_id=471199969]
+
+[node name="bar" parent="." unique_id=223154584 instance=ExtResource("1_etjof")]
