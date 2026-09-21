@@ -46,6 +46,7 @@ component_mouse_capture = NodePath("../Components/MouseCapture")
 [node name="Components" type="Node" parent="." unique_id=1335919464]
 
 [node name="MouseCapture" type="Node" parent="Components" unique_id=1201850463]
+process_mode = 3
 script = ExtResource("1_4q5nu")
 
 [node name="WeaponController" type="Node" parent="Components" unique_id=118430441 node_paths=PackedStringArray("camera", "weapon_model_parent", "weapon_state_chart")]

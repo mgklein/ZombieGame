@@ -7,3 +7,4 @@ func _process(delta: float) -> void:
 		Global.game_controller.change_menu_scene("res://scenes/system/pause_menu.tscn")
 		Global.game_controller.current_menu.visible = true
 		Global.game_controller.current_hud.visible = false
+		get_tree().paused = true
