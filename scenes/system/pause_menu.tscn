@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://ceb1ebpy20l6s"]
+
+[ext_resource type="Script" uid="uid://dq2v0iwpsna5l" path="res://assets/scripts/ui/pause_menu.gd" id="1_0tfpa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn0t7"]
+bg_color = Color(11.708403, 11.708403, 11.708403, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="PauseMenu" type="Control" unique_id=1742332692]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0tfpa")
+
+[node name="Panel" type="Panel" parent="." unique_id=1922751635]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.5
+offset_top = -252.5
+offset_right = 288.5
+offset_bottom = 252.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=177791633]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -69.0
+offset_right = 239.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=1173720375]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="VBoxContainer" unique_id=1569881246]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "Restart"
+
+[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=1026501146]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "Main Menu"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=509957378]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "Quit"
+
+[node name="Title" type="Label" parent="." unique_id=1946382002]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.5
+offset_top = 100.0
+offset_right = 146.5
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Pause"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Main Menu" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
