@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://drxnexf68abh2" path="res://levels/prototype_level.tscn" id="1_rtgv3"]
 [ext_resource type="PackedScene" uid="uid://cyhbnhbqvwypv" path="res://scenes/ui/user_interface.tscn" id="2_mgb3u"]
 [ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://Trenchbroom/models/bar/newstool.glb" id="3_qoi2i"]
+[ext_resource type="PackedScene" uid="uid://tveyw5siuc0f" path="res://assets/Gunnie/Bar/bar.glb" id="4_bvk2m"]
 
 [node name="MainScene" type="Node" unique_id=1550936618]
 
@@ -14,3 +15,6 @@
 
 [node name="newstool" parent="." unique_id=166389431 instance=ExtResource("3_qoi2i")]
 transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -1.0486994, 0.79946256, -0.00892067)
+
+[node name="bar" parent="." unique_id=223154584 instance=ExtResource("4_bvk2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3598766, 0.64525974, -2.7075014)
