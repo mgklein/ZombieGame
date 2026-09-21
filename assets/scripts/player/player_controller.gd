@@ -43,5 +43,4 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(duration).timeout
 		spawn_enemies.emit(position_index)
 	
-	if path_controller != null:
-		path_controller.progress_ratio = lerp(path_controller.progress_ratio, _target_progress, delta)
+	#path_controller.progress_ratio = lerp(path_controller.progress_ratio, _target_progress, delta)
