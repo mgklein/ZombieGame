@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://dsnlt5ek7an0c"]
+
+[ext_resource type="Script" uid="uid://40liuegy31iu" path="res://assets/scripts/ui/main_menu.gd" id="1_2k5mk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sn0t7"]
+bg_color = Color(11.708403, 11.708403, 11.708403, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="MainMenu" type="Control" unique_id=1742332692]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2k5mk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=177791633]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -69.0
+offset_right = 239.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="LevelButton" type="Button" parent="VBoxContainer" unique_id=1026501146]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "Start Gunnar Test Level"
+
+[node name="LevelButton2" type="Button" parent="VBoxContainer" unique_id=1569881246]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "Start Matt Test Level"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=509957378]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.0093103545, 0.0093103545, 0.0093103545, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_sn0t7")
+text = "Quit"
+
+[node name="Title" type="Label" parent="." unique_id=1946382002]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.5
+offset_top = 100.0
+offset_right = 146.5
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 42
+text = "Zombie Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/LevelButton" to="." method="_on_level_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LevelButton2" to="." method="_on_level_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

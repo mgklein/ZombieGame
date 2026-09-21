@@ -19,7 +19,7 @@ radius = 0.4
 height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
-radius = 5.0
+radius = 50.0
 
 [node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251]
 script = ExtResource("1_2kgy0")
@@ -34,6 +34,7 @@ shape = SubResource("CapsuleShape3D_sn0t7")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=323829948]
 script = ExtResource("2_ho7jy")
+max_health = 1.0
 metadata/_custom_type_script = "uid://7ypbghoip3k0"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=635234048]

@@ -5,5 +5,5 @@ func _on_empty_state_entered() -> void:
 	print("Out of axes!")
 
 func _on_empty_state_processing(delta: float) -> void:
-	# Could check for reload input here
-	pass
+	weapon_controller.current_ammo = weapon_controller.current_weapon.max_ammo
+	weapon_controller.weapon_state_chart.send_event("onIdle")

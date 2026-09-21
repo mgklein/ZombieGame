@@ -5,16 +5,28 @@
 [ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://Trenchbroom/models/bar/newstool.glb" id="3_qoi2i"]
 [ext_resource type="PackedScene" uid="uid://tveyw5siuc0f" path="res://assets/Gunnie/Bar/bar.glb" id="4_bvk2m"]
 
-[node name="MainScene" type="Node" unique_id=1550936618]
+[node name="GameController" type="Node" unique_id=1550936618 node_paths=PackedStringArray("level", "hud", "menu")]
+script = ExtResource("1_bvk2m")
+level = NodePath("Level")
+hud = NodePath("HUD")
+menu = NodePath("Menu")
 
 [node name="Managers" type="Node" parent="." unique_id=1583284034]
 
-[node name="PrototypeLevel" parent="." unique_id=30809116 instance=ExtResource("1_rtgv3")]
+[node name="PauseManager" type="Node" parent="Managers" unique_id=1168095990]
+script = ExtResource("2_qoi2i")
 
-[node name="UserInterface" parent="." unique_id=851801993 instance=ExtResource("2_mgb3u")]
+[node name="Level" type="Node3D" parent="." unique_id=1833731324]
 
-[node name="newstool" parent="." unique_id=166389431 instance=ExtResource("3_qoi2i")]
-transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, -1.0486994, 0.79946256, -0.00892067)
+[node name="Menu" type="Control" parent="." unique_id=194683160]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="bar" parent="." unique_id=223154584 instance=ExtResource("4_bvk2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3598766, 0.64525974, -2.7075014)
+[node name="MainMenu" parent="Menu" unique_id=1742332692 instance=ExtResource("3_qoi2i")]
+layout_mode = 1
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1238628640]
