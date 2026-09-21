@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://cc6rsu3iwelm8"]
-
-[ext_resource type="PackedScene" uid="uid://gyjgjtld8ee0" path="res://Trenchbroom/models/bar/newstool.glb" id="1_vx4hi"]
-
-[node name="Node3D" type="Node3D" unique_id=121594513]
-
-[node name="newstool" parent="." unique_id=826910761 instance=ExtResource("1_vx4hi")]

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmaoune3jn3ea"
-path.s3tc="res://.godot/imported/gb_enemy_1_GB-Body_Gun_head.png-fd5a806a02bc5974c8b9c2511cb9f5e9.s3tc.ctex"
+uid="uid://bgwnmloqfia16"
+path.s3tc="res://.godot/imported/newstool_innerbook.png-754a80593504fd9eca92391aa1568eca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "c3dac43a2b00b72c30ecbee3484abd92"
+"md5": "eb8cb1e46275fc9c3fef034a39ac44bd"
 }
 
 [deps]
 
-source_file="res://Trenchbroom/models/gb_enemy_1_GB-Body_Gun_head.png"
-dest_files=["res://.godot/imported/gb_enemy_1_GB-Body_Gun_head.png-fd5a806a02bc5974c8b9c2511cb9f5e9.s3tc.ctex"]
+source_file="res://assets/Gunnie/newstool_innerbook.png"
+dest_files=["res://.godot/imported/newstool_innerbook.png-754a80593504fd9eca92391aa1568eca.s3tc.ctex"]
 
 [params]
 
