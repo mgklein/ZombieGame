@@ -1,5 +1,7 @@
 class_name SpawnPoint extends Node3D
 
+
+
 @export var num_to_spawn: int = 3
 @export var min_spawn_delay: float = 5.0 # in seconds
 @export var max_spawn_delay: float = 10.0 # in seconds
@@ -26,6 +28,7 @@ func _ready() -> void:
 func _on_player_controller_spawn_enemies(spawn_group: int) -> void:
 	if spawn_group_str == "Enemy" + str(spawn_group):
 		for i in range(num_to_spawn):
+			print("spawning enemy")
 			var new_enemy = enemy_type.instantiate()
 			new_enemy.position = self.position
 			level.add_child(new_enemy)

@@ -99,7 +99,7 @@ collision_mask = 3
 path_controller = NodePath("..")
 
 [node name="SimpleEnemy" parent="." unique_id=1560393251 instance=ExtResource("5_0f5xv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.095, 0, -8.29)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.095, -0.09953126, -8.29)
 
 [node name="SpawnPoint" parent="." unique_id=2102401824 instance=ExtResource("5_i83pu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50733757, 0.49999905, -10.734002)

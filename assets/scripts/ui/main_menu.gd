@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _on_level_button_pressed() -> void:
 	Global.game_controller.current_menu.visible = false
-	Global.game_controller.change_level_scene("res://levels/prototype_level.tscn")
+	Global.game_controller.change_level_scene("res://levels/trench_test_two.tscn")
 	Global.game_controller.change_hud_scene("res://scenes/ui/user_interface.tscn")
 
 
