@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dlccq5nikj34w"]
 
 [ext_resource type="Texture2D" uid="uid://cmje5fw0ry6f2" path="res://assets/textures/Woodfloor/Woodfloor.png" id="1_avg66"]
+[ext_resource type="Script" uid="uid://2iko0yf223xc" path="res://assets/scripts/components/player_movement_manager.gd" id="1_i83pu"]
 [ext_resource type="PackedScene" uid="uid://b61ojcwhacduj" path="res://scenes/environment/world_environment.tscn" id="2_21g0b"]
 [ext_resource type="PackedScene" uid="uid://bbbwdi513svcb" path="res://scenes/player/player_controller.tscn" id="3_0f5xv"]
 [ext_resource type="PackedScene" uid="uid://d1dv8d3by2dvw" path="res://scenes/enemies/simple_enemy.tscn" id="5_0f5xv"]
@@ -48,6 +49,9 @@ point_count = 3
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=228156667]
 visible = false
 navigation_mesh = SubResource("NavigationMesh_bhunq")
+
+[node name="PlayerMovementManager" type="Node" parent="." unique_id=1162789519]
+script = ExtResource("1_i83pu")
 
 [node name="Geometry" type="Node3D" parent="." unique_id=232470944 groups=["geometry"]]
 
@@ -101,10 +105,15 @@ path_controller = NodePath("..")
 [node name="SimpleEnemy" parent="." unique_id=1560393251 instance=ExtResource("5_0f5xv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.095, 0, -8.29)
 
-[node name="SpawnPoint" parent="." unique_id=2102401824 instance=ExtResource("5_i83pu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50733757, 0.49999905, -10.734002)
+[node name="SpawnPoint" parent="." unique_id=837738906 instance=ExtResource("5_i83pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.152076, 0.49999905, -10.734002)
 enemy_type = ExtResource("5_0f5xv")
 
 [node name="SpawnPoint2" parent="." unique_id=1637413841 instance=ExtResource("5_i83pu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.877161, 0.49999905, -14.312732)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.877161, 0.49999905, -17.61884)
+enemy_type = ExtResource("5_0f5xv")
+
+[node name="SpawnPoint3" parent="." unique_id=2102401824 instance=ExtResource("5_i83pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.854774, 0.49999905, -5.7820272)
+spawn_group_num = 2
 enemy_type = ExtResource("5_0f5xv")

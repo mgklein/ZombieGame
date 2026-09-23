@@ -36,11 +36,15 @@ func move_along_path_smoothly(target_ratio: float) -> void:
 	# Animate the progress_ratio from current ratio to target ratio
 	tween.tween_property(path_controller, "progress_ratio", target_ratio, duration)
 
+func move_player():
+	position_index = min(position_index + 1, num_stop_positions)
+	print("moving to " + str(position_index))
+	move_along_path_smoothly(get_target_progress())
+	await get_tree().create_timer(duration).timeout
+	spawn_enemies.emit(position_index)
+
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_move"):
-		position_index = min(position_index + 1, num_stop_positions)
-		move_along_path_smoothly(get_target_progress())
-		await get_tree().create_timer(duration).timeout
-		spawn_enemies.emit(position_index)
+		move_player()
 	
 	#path_controller.progress_ratio = lerp(path_controller.progress_ratio, _target_progress, delta)
