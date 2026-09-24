@@ -186,12 +186,12 @@
 "max_spawn_delay" "2"
 // brush 0
 {
-( -336 -264 -48 ) ( -336 -263 -48 ) ( -336 -264 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -336 -264 -48 ) ( -336 -264 -47 ) ( -335 -264 -48 ) default/skip [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -336 -264 -48 ) ( -335 -264 -48 ) ( -336 -263 -48 ) default/skip [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -272 -192 -40 ) ( -272 -191 -40 ) ( -271 -192 -40 ) default/skip [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( -272 -192 -40 ) ( -271 -192 -40 ) ( -272 -192 -39 ) default/skip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( -272 -192 -40 ) ( -272 -192 -39 ) ( -272 -191 -40 ) default/skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -584 24 ) ( -416 -583 24 ) ( -416 -584 25 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -584 24 ) ( -416 -584 25 ) ( -415 -584 24 ) default/skip [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -416 -584 24 ) ( -415 -584 24 ) ( -416 -583 24 ) default/skip [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -352 -512 32 ) ( -352 -511 32 ) ( -351 -512 32 ) default/skip [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
+( -352 -512 32 ) ( -351 -512 32 ) ( -352 -512 33 ) default/skip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
+( -352 -512 32 ) ( -352 -512 33 ) ( -352 -511 32 ) default/skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
 // entity 2
@@ -203,8 +203,8 @@
 {
 "classname" "func_zombiespawn"
 "num_to_spawn" "1"
-"max_spawn_delay" ".8"
-"min_spawn_delay" ".5"
+"max_spawn_delay" "2"
+"min_spawn_delay" "3"
 // brush 0
 {
 ( -720 80 -48 ) ( -720 81 -48 ) ( -720 80 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -220,7 +220,7 @@
 "classname" "func_zombiespawn"
 "num_to_spawn" "1"
 "min_spawn_delay" "0"
-"max_spawn_delay" "0.25"
+"max_spawn_delay" "0.5"
 // brush 0
 {
 ( -608 224 -48 ) ( -608 225 -48 ) ( -608 224 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -235,8 +235,8 @@
 {
 "classname" "func_zombiespawn"
 "num_to_spawn" "1"
-"min_spawn_delay" ".25"
-"max_spawn_delay" "5"
+"min_spawn_delay" "9"
+"max_spawn_delay" "10"
 // brush 0
 {
 ( -832 240 -48 ) ( -832 241 -48 ) ( -832 240 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -304,10 +304,15 @@
 }
 // entity 17
 {
+"classname" "gb_enemy_1"
+"origin" "-176 -240 -48"
+}
+// entity 18
+{
 "classname" "func_zombiespawn"
 "spawn_group_str" "Enemy3"
 "max_spawn_delay" "2"
-"min_spawn_delay" "1"
+"min_spawn_delay" "6"
 "num_to_spawn" "4"
 // brush 0
 {
@@ -319,12 +324,12 @@
 ( 112 224 -40 ) ( 112 224 -39 ) ( 112 225 -40 ) default/skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 18
+// entity 19
 {
 "classname" "func_zombiespawn"
 "spawn_group_str" "Enemy3"
 "max_spawn_delay" "2"
-"min_spawn_delay" "1"
+"min_spawn_delay" "6"
 "num_to_spawn" "4"
 // brush 0
 {
@@ -336,7 +341,7 @@
 ( 280 224 -40 ) ( 280 224 -39 ) ( 280 225 -40 ) default/skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }
-// entity 19
+// entity 20
 {
 "classname" "func_zombiespawn"
 "spawn_group_str" "Enemy4"
@@ -351,22 +356,5 @@
 ( 480 352 -40 ) ( 480 353 -40 ) ( 481 352 -40 ) default/skip [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
 ( 480 352 -40 ) ( 481 352 -40 ) ( 480 352 -39 ) default/skip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 480 352 -40 ) ( 480 352 -39 ) ( 480 353 -40 ) default/skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-}
-// entity 20
-{
-"classname" "func_zombiespawn"
-"spawn_group_str" "Enemy5"
-"max_spawn_delay" "1"
-"min_spawn_delay" "0"
-"num_to_spawn" "6"
-// brush 0
-{
-( 368 -680 -48 ) ( 368 -679 -48 ) ( 368 -680 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 368 -680 -48 ) ( 368 -680 -47 ) ( 369 -680 -48 ) default/skip [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 368 -680 -48 ) ( 369 -680 -48 ) ( 368 -679 -48 ) default/skip [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 464 -600 -40 ) ( 464 -599 -40 ) ( 465 -600 -40 ) default/skip [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 464 -600 -40 ) ( 465 -600 -40 ) ( 464 -600 -39 ) default/skip [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 464 -600 -40 ) ( 464 -600 -39 ) ( 464 -599 -40 ) default/skip [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
 }

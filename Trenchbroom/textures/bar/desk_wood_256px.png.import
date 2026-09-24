@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk5oo263y3u7w"
-path.s3tc="res://.godot/imported/skip.png-f7bdb0031053988bf2759d747184a4e9.s3tc.ctex"
+uid="uid://dnwf45en6mjww"
+path.s3tc="res://.godot/imported/desk_wood_256px.png-7b46fa20cf8e18ffbaebc859cebd1f0d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Trenchbroom/textures/default/skip.png"
-dest_files=["res://.godot/imported/skip.png-f7bdb0031053988bf2759d747184a4e9.s3tc.ctex"]
+source_file="res://Trenchbroom/textures/bar/desk_wood_256px.png"
+dest_files=["res://.godot/imported/desk_wood_256px.png-7b46fa20cf8e18ffbaebc859cebd1f0d.s3tc.ctex"]
 
 [params]
 

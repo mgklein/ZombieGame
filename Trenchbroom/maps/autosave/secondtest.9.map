@@ -220,7 +220,7 @@
 "classname" "func_zombiespawn"
 "num_to_spawn" "1"
 "min_spawn_delay" "0"
-"max_spawn_delay" "0.25"
+"max_spawn_delay" "0.5"
 // brush 0
 {
 ( -608 224 -48 ) ( -608 225 -48 ) ( -608 224 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -235,8 +235,8 @@
 {
 "classname" "func_zombiespawn"
 "num_to_spawn" "1"
-"min_spawn_delay" ".25"
-"max_spawn_delay" "5"
+"min_spawn_delay" "1"
+"max_spawn_delay" "1.4"
 // brush 0
 {
 ( -832 240 -48 ) ( -832 241 -48 ) ( -832 240 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1

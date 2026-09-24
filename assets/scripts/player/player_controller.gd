@@ -38,9 +38,10 @@ func move_along_path_smoothly(target_ratio: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_move"):
+		spawn_enemies.emit(position_index)
 		position_index = min(position_index + 1, num_stop_positions)
 		move_along_path_smoothly(get_target_progress())
 		await get_tree().create_timer(duration).timeout
-		spawn_enemies.emit(position_index)
+
 	
 	#path_controller.progress_ratio = lerp(path_controller.progress_ratio, _target_progress, delta)
