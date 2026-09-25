@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dor06ujph5fbv"]
+
+[ext_resource type="Texture2D" uid="uid://dfx0s1h8n3mhy" path="res://Trenchbroom/textures/bar/ceilinglight.png" id="1_3j3ng"]
+
+[resource]
+albedo_texture = ExtResource("1_3j3ng")
+metallic_specular = 0.0
+texture_filter = 2
