@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDSolidClass" format=3 uid="uid://b45b03ryb7m36"]
+
+[ext_resource type="Script" uid="uid://5cow84q03m6a" path="res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd" id="1_fg4nr"]
+[ext_resource type="Script" uid="uid://eabgtrvbwp3h" path="res://assets/scripts/props/reparent_obstacles.gd" id="2_xba7l"]
+
+[resource]
+script = ExtResource("1_fg4nr")
+script_class = ExtResource("2_xba7l")
+classname = "obstacle_reparent"
+description = "This reparents obstacles for use on nav mesh"
+node_class = "StaticBody3D"
+metadata/_custom_type_script = "uid://5cow84q03m6a"

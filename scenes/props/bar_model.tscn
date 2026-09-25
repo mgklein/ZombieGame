@@ -1,7 +1,14 @@
-[gd_scene format=3 uid="uid://di6jra8l4ir8j"]
+[gd_scene format=3 uid="uid://4pmfv0tx8w4v"]
 
 [ext_resource type="PackedScene" uid="uid://tveyw5siuc0f" path="res://assets/Gunnie/Bar/bar.glb" id="1_etjof"]
 
-[node name="Node3D" type="Node3D" unique_id=471199969]
+[sub_resource type="BoxShape3D" id="BoxShape3D_pitpm"]
+size = Vector3(1.9829712, 1.3039551, 0.8945923)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1123230661]
 
 [node name="bar" parent="." unique_id=223154584 instance=ExtResource("1_etjof")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1391363549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.003753662, 0.0037841797, 0.14071655)
+shape = SubResource("BoxShape3D_pitpm")

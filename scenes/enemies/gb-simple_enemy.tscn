@@ -16,8 +16,8 @@ height = 1.8
 radius = 25.0
 
 [node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251 node_paths=PackedStringArray("model")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9000.376, 0)
-velocity = Vector3(0, -419.92307, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -115164.84, 0)
+velocity = Vector3(0, -1502.3115, 0)
 script = ExtResource("1_ywklh")
 follow_speed = 1.0
 model = NodePath("GB-Body")
@@ -28,7 +28,7 @@ shape = SubResource("CapsuleShape3D_sn0t7")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=323829948]
 script = ExtResource("2_fokv5")
-max_health = 3.0
+max_health = 1.0
 metadata/_custom_type_script = "uid://7ypbghoip3k0"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=635234048]

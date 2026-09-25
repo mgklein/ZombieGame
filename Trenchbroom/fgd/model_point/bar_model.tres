@@ -1,14 +1,16 @@
 [gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://clhxhxdegid8s"]
 
 [ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_pj5s2"]
-[ext_resource type="PackedScene" uid="uid://di6jra8l4ir8j" path="res://scenes/props/bar_model.tscn" id="2_uwcas"]
+[ext_resource type="PackedScene" uid="uid://4pmfv0tx8w4v" path="res://scenes/props/bar_model.tscn" id="2_uwcas"]
 [ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_wqfbw"]
+[ext_resource type="Script" uid="uid://eabgtrvbwp3h" path="res://assets/scripts/props/reparent_obstacles.gd" id="4_uwcas"]
 
 [resource]
 script = ExtResource("2_wqfbw")
 target_map_editor = 1
 generate_size_property = true
 scene_file = ExtResource("2_uwcas")
+script_class = ExtResource("4_uwcas")
 classname = "bar_model"
 description = "It's a model of the bar itself"
 meta_properties = Dictionary[String, Variant]({
