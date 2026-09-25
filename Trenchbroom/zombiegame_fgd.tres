@@ -7,10 +7,11 @@
 [ext_resource type="Resource" uid="uid://clhxhxdegid8s" path="res://Trenchbroom/fgd/model_point/bar_model.tres" id="4_e2jyd"]
 [ext_resource type="Resource" uid="uid://dwwqfxqcp2d2" path="res://Trenchbroom/fgd/solid/func_moving_platform.tres" id="5_wlhil"]
 [ext_resource type="Resource" uid="uid://bbjexxfm77pv6" path="res://Trenchbroom/fgd/solid/func_zombie_spawn.tres" id="6_0oxru"]
+[ext_resource type="Resource" uid="uid://cp51iqrxdk4mi" path="res://Trenchbroom/fgd/solid/func_geo_gb.tres" id="7_1dsu5"]
 
 [resource]
 script = ExtResource("1_ts0y1")
 fgd_name = "ZombieGame"
 base_fgd_files = Array[Resource]([ExtResource("1_toj87")])
-entity_definitions = Array[Resource]([ExtResource("2_ts0hu"), ExtResource("3_s3n20"), ExtResource("4_e2jyd"), ExtResource("5_wlhil"), ExtResource("6_0oxru")])
+entity_definitions = Array[Resource]([ExtResource("2_ts0hu"), ExtResource("3_s3n20"), ExtResource("4_e2jyd"), ExtResource("5_wlhil"), ExtResource("6_0oxru"), ExtResource("7_1dsu5")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"
