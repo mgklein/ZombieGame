@@ -3,7 +3,7 @@
 class_name SimpleEnemy
 extends GenisysEnemy
 
-@export var follow_speed: float = 3.0
+@export var follow_speed: float = 2003.0
 @export var model: Node3D
 
 
