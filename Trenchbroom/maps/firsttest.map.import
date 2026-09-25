@@ -1,7 +1,7 @@
 [remap]
 
 importer="func_godot.map"
-type="Resource"
+type="QuakeMapFile"
 uid="uid://k4hcwa8ep5j"
 path="res://.godot/imported/firsttest.map-4c1c2830eb0b44718736b91216d4d666.tres"
 
