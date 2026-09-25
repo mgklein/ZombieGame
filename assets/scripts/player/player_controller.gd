@@ -14,6 +14,8 @@ signal spawn_enemies(spawn_group: int)
 	#for spawner in spawners:
 		#if spawner.has_method("_on_player_controller_spawn_enemies"):
 			#self.spawn_enemies.connect(spawner._on_player_controller_spawn_enemies)
+func _ready() -> void:
+	spawn_enemies.emit(0)
 
 
 func update_rotation(rotation_input) -> void:
