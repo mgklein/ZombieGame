@@ -17,7 +17,7 @@ func _func_godot_apply_properties(entity_properties: Dictionary) -> void:
 	num_to_spawn = entity_properties["num_to_spawn"] as int
 	min_spawn_delay = entity_properties["min_spawn_delay"] as float
 	max_spawn_delay = entity_properties["max_spawn_delay"] as float
-	spawn_group_num = entity_properties["spawn_group_str"] as int
+	spawn_group_num = entity_properties["spawn_group_num"] as int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
