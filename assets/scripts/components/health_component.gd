@@ -1,6 +1,7 @@
 class_name HealthComponent extends Node
 
 # Reusable health component for any entity (player, enemies, destructibles)
+# This component script MUST be the direct child of the node that uses health.
 
 signal health_changed(new_health: float, max_health: float)
 signal damage_taken(amount: float, source: Node3D)

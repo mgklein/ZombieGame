@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://xk7ehhm5xe7l"]
+
+[ext_resource type="Script" uid="uid://gvor4s7rld43" path="res://assets/weapons/scripts/projectile.gd" id="1_njnuu"]
+[ext_resource type="PackedScene" uid="uid://dixqqmfi6fjsx" path="res://scenes/weapons/Gunnie/g_axe.tscn" id="2_uecn2"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pitpm"]
+height = 0.2
+radius = 0.7
+
+[node name="Node3D" type="Area3D" unique_id=2138402909]
+script = ExtResource("1_njnuu")
+metadata/_custom_type_script = "uid://gvor4s7rld43"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1849247571]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_pitpm")
+
+[node name="Node3D2" parent="." unique_id=2068026998 instance=ExtResource("2_uecn2")]

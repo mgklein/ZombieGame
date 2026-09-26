@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cj1yw2xtkn0ke"]
+
+[ext_resource type="Script" uid="uid://c755v6vedsetc" path="res://assets/scripts/props/spawn_point.gd" id="1_cgjk5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_riqys"]
+
+[node name="SpawnPoint" type="Node3D" unique_id=2102401824]
+script = ExtResource("1_cgjk5")
+
+[node name="DebugSphere" type="MeshInstance3D" parent="." unique_id=1477309710]
+mesh = SubResource("SphereMesh_riqys")

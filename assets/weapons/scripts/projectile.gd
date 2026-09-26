@@ -3,6 +3,7 @@ class_name Projectile extends Area3D
 
 var velocity: Vector3
 var damage: float
+var custom_gravity: float
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -11,14 +12,16 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	velocity.y += custom_gravity * delta
 	global_position += velocity * delta
 	rotate_object_local(Vector3.RIGHT, -10.0 * delta)
 	
 
 
-func setup(vel: Vector3, dmg: float) -> void:
+func setup(vel: Vector3, dmg: float, grav: float) -> void:
 	velocity = vel
 	damage = dmg
+	custom_gravity = grav
 
 
 func _on_body_entered(body: Node3D) -> void:
