@@ -1,6 +1,7 @@
 class_name SimpleEnemy
 extends GenisysEnemy
 
+
 @export var follow_speed: float = 3.0
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D

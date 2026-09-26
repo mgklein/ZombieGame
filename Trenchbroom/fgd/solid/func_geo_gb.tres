@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDSolidClass" format=3 uid="uid://cp51iqrxdk4mi"]
+
+[ext_resource type="Script" uid="uid://5cow84q03m6a" path="res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd" id="1_24xc4"]
+
+[resource]
+script = ExtResource("1_24xc4")
+classname = "func_geo_gb"
+description = "Build most stuff outta this"
+node_class = "StaticBody3D"
+metadata/_custom_type_script = "uid://5cow84q03m6a"

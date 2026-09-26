@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cbxpr0dqw03on"]
+
+[ext_resource type="Texture2D" uid="uid://bydogfmppk3i4" path="res://Trenchbroom/textures/bar/closet_door_wood_256px.png" id="1_ab2b2"]
+
+[resource]
+albedo_texture = ExtResource("1_ab2b2")
+metallic_specular = 0.0
+texture_filter = 2

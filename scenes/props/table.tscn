@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b4yrdfrh1nso4"]
+
+[ext_resource type="PackedScene" uid="uid://bbjm51sr1jqrs" path="res://Trenchbroom/models/bar/base_bar/table.glb" id="1_1mgqr"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1431189941]
+
+[node name="table" parent="." unique_id=1705225598 instance=ExtResource("1_1mgqr")]
