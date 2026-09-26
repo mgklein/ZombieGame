@@ -603,3 +603,29 @@
 ( 144 480 96 ) ( 144 480 97 ) ( 144 481 96 ) bar/desk_wood_256px [ 0 -1.0000000000000004 0 0 ] [ -4.3711390118605926e-08 0 -0.9999999999999993 0 ] 90 0.25 3.5
 }
 }
+// entity 48
+{
+"classname" "bar_stool"
+"origin" "-373 -573 -21"
+}
+// entity 49
+{
+"classname" "bar_stool"
+"origin" "-373 -637 -21"
+}
+// entity 50
+{
+"classname" "bar_stool"
+"origin" "-373 -693 -21"
+}
+// entity 51
+{
+"classname" "bar_stool"
+"origin" "-373 -741 -21"
+}
+// entity 52
+{
+"classname" "bar_stool"
+"origin" "-360.729 -506.467 -41.183"
+"angle" "-2"
+}
