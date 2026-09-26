@@ -15,6 +15,6 @@ description = "It's a barstool
 meta_properties = Dictionary[String, Variant]({
 "color": Color(0.8, 0.8, 0.8, 1),
 "model": "{\"path\": \"Trenchbroom/models/bar_stool.glb\", \"scale\": 32.0 }",
-"size": AABB(-36, -35, -72, 36, 35, 9)
+"size": AABB(-13, -13, -27, 13, 13, 3)
 })
 metadata/_custom_type_script = "uid://ldfqjtq0br35"
