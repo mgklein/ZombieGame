@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bbjm51sr1jqrs"
-path="res://.godot/imported/table.glb-31f51ab30e00600caaf3c2ffde0e9e4e.scn"
+uid="uid://o6ns133do5mw"
+path="res://.godot/imported/gb_enemy_1.glb-fb499cf5eb9493ef995ee379928a89c0.scn"
 
 [deps]
 
-source_file="res://assets/Gunnie/base_bar/table.glb"
-dest_files=["res://.godot/imported/table.glb-31f51ab30e00600caaf3c2ffde0e9e4e.scn"]
+source_file="res://Trenchbroom/models/gb_enemy_1.glb"
+dest_files=["res://.godot/imported/gb_enemy_1.glb-fb499cf5eb9493ef995ee379928a89c0.scn"]
 
 [params]
 
