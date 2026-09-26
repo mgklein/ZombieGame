@@ -48,5 +48,6 @@ func move_player():
 
 
 func _physics_process(delta: float) -> void:
+
 	if Input.is_action_just_pressed("debug_move"):
 		move_player()

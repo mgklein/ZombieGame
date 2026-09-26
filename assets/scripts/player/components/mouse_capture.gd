@@ -22,7 +22,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	_mouse_input = Vector2.ZERO
-	if get_tree().paused:
+	if Global.game_controller.current_menu.visible:
 		current_mouse_mode = Input.MOUSE_MODE_VISIBLE
 	else:
 		current_mouse_mode = Input.MOUSE_MODE_CAPTURED

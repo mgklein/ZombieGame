@@ -11,6 +11,7 @@ func _on_main_menu_button_pressed() -> void:
 	Global.game_controller.current_level.queue_free()
 	Global.game_controller.current_hud.queue_free()
 	get_tree().paused = false
+	
 
 
 func _on_restart_pressed() -> void:
