@@ -23,7 +23,7 @@ func _func_godot_apply_properties(entity_properties: Dictionary) -> void:
 func _ready() -> void:
 	#debug_sphere.visible = false
 	enemy_type = preload("res://scenes/enemies/simple_enemy.tscn")
-	level = self.get_parent()
+	level = get_owner()
 	add_to_group("spawner" + str(spawn_group_num))
 	randomize() # renew rng seed for random enemy spawning
 	var player = get_tree().get_first_node_in_group("player")
