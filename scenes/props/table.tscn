@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://b4yrdfrh1nso4"]
 
-[ext_resource type="PackedScene" uid="uid://bbjm51sr1jqrs" path="res://Trenchbroom/models/bar/base_bar/table.glb" id="1_1mgqr"]
+[ext_resource type="PackedScene" uid="uid://d0s4eek8ndk7l" path="res://assets/Gunnie/base_bar/table.glb" id="1_1mgqr"]
 
-[node name="StaticBody3D" type="StaticBody3D" unique_id=1431189941]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pitpm"]
+height = 1.1903687
+radius = 1.0288086
 
-[node name="table" parent="." unique_id=1705225598 instance=ExtResource("1_1mgqr")]
+[node name="Node3D" type="StaticBody3D" unique_id=789796678]
+
+[node name="table" parent="." unique_id=185923610 instance=ExtResource("1_1mgqr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=912357749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10409546, 0)
+shape = SubResource("CylinderShape3D_pitpm")

@@ -3,6 +3,7 @@ class_name PlayerController extends CharacterBody3D
 @export var path_controller : PathFollow3D
 @export var duration: float = 4.0 # Time in seconds to complete a path movement
 @export var num_stop_positions = 5
+@export var custcenes: AnimationPlayer
 
 @onready var health_component: HealthComponent = $HealthComponent
 
@@ -18,7 +19,7 @@ signal spawn_enemies(spawn_group: int)
 		#if spawner.has_method("_on_player_controller_spawn_enemies"):
 			#self.spawn_enemies.connect(spawner._on_player_controller_spawn_enemies)
 func _ready() -> void:
-	spawn_enemies.emit(0)
+	pass
 
 
 func update_rotation(rotation_input) -> void:
@@ -47,7 +48,12 @@ func move_player():
 	print("moving to " + str(position_index))
 	move_along_path_smoothly(get_target_progress())
 	await get_tree().create_timer(duration).timeout
-	spawn_enemies.emit(position_index)
+	#spawn_enemies.emit(position_index)
+	if position_index == 5:
+		custcenes.active = true
+		print("play animation")
+		custcenes.play("Start Cutscene")
+		
 
 
 func _physics_process(delta: float) -> void:

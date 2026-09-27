@@ -34,6 +34,10 @@ func _on_body_entered(body: Node3D) -> void:
 		if health_component and health_component.has_method("take_damage"):
 			health_component.take_damage(damage, self)
 		
+		if body.has_method("change_all_lights_red"):
+			body.change_all_lights_red()
+			print("has lights method")
+		
 		queue_free()
 
 

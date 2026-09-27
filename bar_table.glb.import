@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d0s4eek8ndk7l"
-path="res://.godot/imported/table.glb-31f51ab30e00600caaf3c2ffde0e9e4e.scn"
+uid="uid://gkemfwnlada7"
+path="res://.godot/imported/bar_table.glb-a662ae1015f770a4306ac20d27d492fa.scn"
 
 [deps]
 
-source_file="res://assets/Gunnie/base_bar/table.glb"
-dest_files=["res://.godot/imported/table.glb-31f51ab30e00600caaf3c2ffde0e9e4e.scn"]
+source_file="res://bar_table.glb"
+dest_files=["res://.godot/imported/bar_table.glb-a662ae1015f770a4306ac20d27d492fa.scn"]
 
 [params]
 

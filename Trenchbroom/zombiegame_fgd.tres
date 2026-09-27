@@ -10,10 +10,13 @@
 [ext_resource type="Resource" uid="uid://cp51iqrxdk4mi" path="res://Trenchbroom/fgd/solid/func_geo_gb.tres" id="7_1dsu5"]
 [ext_resource type="Resource" uid="uid://b45b03ryb7m36" path="res://Trenchbroom/fgd/solid/obstacle_reparent.tres" id="8_bc5yt"]
 [ext_resource type="Resource" uid="uid://b6r35aap2x8hn" path="res://Trenchbroom/fgd/point/base_light.tres" id="9_ei0xl"]
+[ext_resource type="Resource" uid="uid://dofj5yscsefeb" path="res://Trenchbroom/fgd/solid/target_axe_start.tres" id="10_ik6ym"]
+[ext_resource type="Resource" uid="uid://csil2swj6ogmy" path="res://Trenchbroom/fgd/model_point/bar_table.tres" id="11_ifntj"]
+[ext_resource type="Resource" uid="uid://c5cd1mcywxuih" path="res://Trenchbroom/fgd/model_point/bar_tv.tres" id="12_jbfrm"]
 
 [resource]
 script = ExtResource("1_ts0y1")
 fgd_name = "ZombieGame"
 base_fgd_files = Array[Resource]([ExtResource("1_toj87")])
-entity_definitions = Array[Resource]([ExtResource("2_ts0hu"), ExtResource("3_s3n20"), ExtResource("4_e2jyd"), ExtResource("5_wlhil"), ExtResource("6_0oxru"), ExtResource("7_1dsu5"), ExtResource("8_bc5yt"), ExtResource("9_ei0xl")])
+entity_definitions = Array[Resource]([ExtResource("2_ts0hu"), ExtResource("3_s3n20"), ExtResource("4_e2jyd"), ExtResource("5_wlhil"), ExtResource("6_0oxru"), ExtResource("7_1dsu5"), ExtResource("8_bc5yt"), ExtResource("9_ei0xl"), ExtResource("10_ik6ym"), ExtResource("11_ifntj"), ExtResource("12_jbfrm")])
 metadata/_custom_type_script = "uid://drlmgulwbjwqu"
