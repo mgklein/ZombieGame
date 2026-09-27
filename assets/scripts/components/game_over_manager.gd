@@ -1,15 +1,15 @@
 extends Node
 
-var target: PlayerController
+var player: PlayerController
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-		# Find player
-	target = get_tree().get_first_node_in_group("player")
+	# Find player
+	player = get_tree().get_first_node_in_group("player")
 	
 	# Connect signals
-	if target:
-		var health_component = target.get_node_or_null("HealthComponent")
+	if player:
+		var health_component = player.get_node_or_null("HealthComponent")
 		if health_component and not health_component.died.is_connected(_on_died):
 			health_component.died.connect(_on_died)
 
