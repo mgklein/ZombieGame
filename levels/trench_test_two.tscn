@@ -378,6 +378,9 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Environment" id="Environment_pitpm"]
+background_mode = 2
+
 [node name="trench_test_two" type="Node3D" unique_id=1046321112]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1405894425]
@@ -809,3 +812,6 @@ path_controller = NodePath("..")
 
 [node name="PlayerMovementManager" type="Node" parent="." unique_id=125555905]
 script = ExtResource("15_ha8ss")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1211499696]
+environment = SubResource("Environment_pitpm")
