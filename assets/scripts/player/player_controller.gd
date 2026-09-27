@@ -3,6 +3,9 @@ class_name PlayerController extends CharacterBody3D
 @export var path_controller : PathFollow3D
 @export var duration: float = 4.0 # Time in seconds to complete a path movement
 @export var num_stop_positions = 5
+
+@onready var health_component: HealthComponent = $HealthComponent
+
 var position_index: int = 0
 
 signal spawn_enemies(spawn_group: int)
@@ -48,6 +51,5 @@ func move_player():
 
 
 func _physics_process(delta: float) -> void:
-
 	if Input.is_action_just_pressed("debug_move"):
 		move_player()
