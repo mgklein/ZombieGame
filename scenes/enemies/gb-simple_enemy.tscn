@@ -15,12 +15,11 @@ height = 1.8
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
 radius = 25.0
 
-[node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251 node_paths=PackedStringArray("model")]
+[node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -115164.84, 0)
 velocity = Vector3(0, -1502.3115, 0)
 script = ExtResource("1_ywklh")
 follow_speed = 1.0
-model = NodePath("GB-Body")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=6568200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

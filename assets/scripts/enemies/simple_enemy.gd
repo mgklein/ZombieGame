@@ -3,13 +3,18 @@ extends GenisysEnemy
 
 
 @export var follow_speed: float = 3.0
+@export var acceleration: float = 20.0 # Idk what are good numbers yet, video glosses over
+@export var deceleration: float = 30.0 # Idk what are good numbers yet, video glosses over
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var state_chart: StateChart = $StateChart
 @onready var health_component: HealthComponent = $HealthComponent
+@onready var animation_player: AnimationPlayer = $zombie_with_modelsv1/AnimationPlayer
+@onready var anim_tree: AnimationTree = $AnimationTree
 
 var target: Node3D
-
+var ready_to_follow: bool = false
+var anim_tree_state: AnimationNodeStateMachinePlayback
 
 func _ready() -> void:
 	super._ready()
@@ -20,6 +25,20 @@ func _ready() -> void:
 	# Connect signals
 	health_component.died.connect(_on_died)
 	nav_agent.velocity_computed.connect(_on_velocity_computed)
+	
+	anim_tree_state = anim_tree["parameters/playback"]
+	
+	while anim_tree_state.get_current_node() != "Idle":
+		await get_tree().process_frame
+	anim_tree["parameters/Idle/TimeSeek/seek_request"] = randf_range(0.0, 1.0)
+	
+	#if animation_player:
+		#animation_player.play("Zombie_Rise")
+		#await animation_player.animation_finished
+		#animation_player.play("Zombie_Idle")
+		#animation_player.seek(randf_range(0.0, animation_player.current_animation_length))
+	
+	ready_to_follow = true
 
 
 func _physics_process(delta: float) -> void:
@@ -28,6 +47,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta # Tutorial just used velocity.y -= 20.0 * delta
 	
 	move_and_slide()
+	update_blends()
 
 
 func on_triggered() -> void:
@@ -39,12 +59,16 @@ func _on_died() -> void:
 
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
-	velocity.x = safe_velocity.x
-	velocity.z = safe_velocity.z
-
+	var target_velocity = Vector3(safe_velocity.x, safe_velocity.y, safe_velocity.z)
+	var accel = acceleration if safe_velocity.length() > 0.01 else deceleration
+	velocity.x = move_toward(velocity.x, target_velocity.x, accel * get_physics_process_delta_time())
+	velocity.z = move_toward(velocity.z, target_velocity.z, accel * get_physics_process_delta_time())
 
 func _on_follow_state_physics_processing(delta: float) -> void:
-	if not target:
+	if anim_tree_state.get_current_node() == "Idle":
+		anim_tree_state.travel("Follow")
+	
+	if not target or not ready_to_follow:
 		return
 	
 	# Set target position for navigation
@@ -53,6 +77,8 @@ func _on_follow_state_physics_processing(delta: float) -> void:
 	# Check if navigation finished
 	if nav_agent.is_navigation_finished():
 		nav_agent.velocity = Vector3.ZERO
+		if animation_player and animation_player.current_animation != "Zombie_Idle":
+			animation_player.play("Zombie_Idle")
 		return
 	
 	# Get next position in path
@@ -61,6 +87,17 @@ func _on_follow_state_physics_processing(delta: float) -> void:
 	
 	# Set desired velocity (NavigationAgent handles avoidance)
 	nav_agent.velocity = direction * follow_speed
+	
+	# Smoothly accelerate toward target
+	if not nav_agent.avoidance_enabled:
+		var target_velocity_x = direction.x * follow_speed
+		var target_velocity_z = direction.z * follow_speed
+		velocity.x = move_toward(velocity.x, target_velocity_x, acceleration * delta)
+		velocity.z = move_toward(velocity.z, target_velocity_z, acceleration * delta)
+	
+	
+	#if animation_player and animation_player.current_animation != "Zombie_Walk":
+		#animation_player.play("Zombie_Walk")
 	
 	# Rotate to face movement direction
 	if direction.length() > 0.01:
@@ -72,3 +109,9 @@ func _on_follow_state_physics_processing(delta: float) -> void:
 func _on_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		on_triggered()
+
+
+func update_blends() -> void:
+	var move_amount = velocity.length()
+	move_amount = remap(move_amount, 0.0, follow_speed, 0.0, 1.0)
+	anim_tree["parameters/Follow/IdleChaseBlend/blend_position"] = move_amount
