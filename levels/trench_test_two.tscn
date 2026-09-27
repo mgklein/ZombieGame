@@ -611,6 +611,7 @@ script = ExtResource("8_7qqxc")
 num_to_spawn = 1
 min_spawn_delay = 0.5
 max_spawn_delay = 0.8
+spawn_group_num = 0
 enemy_type = ExtResource("4_k27jl")
 
 [node name="entity_4_func_zombiespawn" type="Node3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1087761618]
@@ -619,6 +620,7 @@ script = ExtResource("8_7qqxc")
 num_to_spawn = 1
 min_spawn_delay = 0.0
 max_spawn_delay = 0.25
+spawn_group_num = 0
 enemy_type = ExtResource("4_k27jl")
 
 [node name="entity_5_func_zombiespawn" type="Node3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1855513537]
@@ -627,6 +629,7 @@ script = ExtResource("8_7qqxc")
 num_to_spawn = 1
 min_spawn_delay = 0.25
 max_spawn_delay = 0.5
+spawn_group_num = 0
 enemy_type = ExtResource("4_k27jl")
 
 [node name="entity_17_func_zombiespawn" type="Node3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1344165852]
@@ -635,6 +638,7 @@ script = ExtResource("8_7qqxc")
 num_to_spawn = 4
 min_spawn_delay = 1.0
 max_spawn_delay = 2.0
+spawn_group_num = 2
 enemy_type = ExtResource("4_k27jl")
 
 [node name="entity_18_func_zombiespawn" type="Node3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=666949560]
@@ -643,6 +647,7 @@ script = ExtResource("8_7qqxc")
 num_to_spawn = 4
 min_spawn_delay = 1.0
 max_spawn_delay = 2.0
+spawn_group_num = 3
 enemy_type = ExtResource("4_k27jl")
 
 [node name="entity_19_func_zombiespawn" type="Node3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1085015085]
@@ -651,6 +656,7 @@ script = ExtResource("8_7qqxc")
 num_to_spawn = 4
 min_spawn_delay = 2.0
 max_spawn_delay = 6.0
+spawn_group_num = 3
 enemy_type = ExtResource("4_k27jl")
 
 [node name="entity_20_func_zombiespawn" type="Node3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=150936357]
@@ -659,6 +665,7 @@ script = ExtResource("8_7qqxc")
 num_to_spawn = 6
 min_spawn_delay = 0.0
 max_spawn_delay = 1.0
+spawn_group_num = 4
 enemy_type = ExtResource("4_k27jl")
 
 [node name="entity_21_func_geo_gb" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=1707265062]
