@@ -22,6 +22,9 @@ height = 1.8
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
 radius = 50.0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qwvii"]
+animation = &"Zombie_Scratch"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ho7jy"]
 animation = &"Zombie_Idle"
 
@@ -75,56 +78,72 @@ node_connections = [&"output", 0, &"Animation"]
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2okpx"]
+xfade_time = 0.2
 switch_mode = 2
 advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dxmbq"]
+xfade_time = 0.2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7bpfv"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wlamu"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cf2kt"]
+xfade_time = 0.2
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bhunq"]
+states/Attack/node = SubResource("AnimationNodeAnimation_qwvii")
+states/Attack/position = Vector2(630, 213)
+states/End/position = Vector2(897, 138)
 states/Follow/node = SubResource("AnimationNodeBlendTree_cf2kt")
-states/Follow/position = Vector2(750, 147)
+states/Follow/position = Vector2(722, 138)
 states/Idle/node = SubResource("AnimationNodeBlendTree_7g21x")
 states/Idle/position = Vector2(554, 138)
 states/Spawn/node = SubResource("AnimationNodeBlendTree_v047c")
-states/Spawn/position = Vector2(388, 121)
-transitions = ["Start", "Spawn", SubResource("AnimationNodeStateMachineTransition_xp73g"), "Spawn", "Idle", SubResource("AnimationNodeStateMachineTransition_2okpx"), "Idle", "Follow", SubResource("AnimationNodeStateMachineTransition_dxmbq"), "Follow", "Idle", SubResource("AnimationNodeStateMachineTransition_7bpfv")]
+states/Spawn/position = Vector2(407, 138)
+states/Start/position = Vector2(242, 138)
+transitions = ["Start", "Spawn", SubResource("AnimationNodeStateMachineTransition_xp73g"), "Spawn", "Idle", SubResource("AnimationNodeStateMachineTransition_2okpx"), "Idle", "Follow", SubResource("AnimationNodeStateMachineTransition_dxmbq"), "Follow", "Idle", SubResource("AnimationNodeStateMachineTransition_7bpfv"), "Follow", "Attack", SubResource("AnimationNodeStateMachineTransition_wlamu"), "Attack", "Follow", SubResource("AnimationNodeStateMachineTransition_cf2kt")]
+graph_offset = Vector2(-7, 35)
 
 [node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251]
 script = ExtResource("1_2kgy0")
-follow_speed = 1.0
+follow_speed = 1.5
+melee_range = 2.0
 
 [node name="zombie_with_modelsv1" parent="." unique_id=204081870 instance=ExtResource("2_fgow6")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
-[node name="Skeleton3D" parent="zombie_with_modelsv1/Skinned Mesh 1" parent_id_path=PackedInt32Array(204081870, 283054957) index="0" unique_id=1551314177]
-bones/1/position = Vector3(-0.0005105496, 0.16023336, 0.8166234)
-bones/1/rotation = Quaternion(0.7758059, 0.061793026, 0.0465691, 0.62620944)
+[node name="Skeleton3D" parent="zombie_with_modelsv1/Skinned Mesh 1" parent_id_path=PackedInt32Array(204081870, 614954345) index="0" unique_id=1702960548]
+bones/1/position = Vector3(0.013179604, 0.13765115, 0.6111759)
+bones/1/rotation = Quaternion(0.8023309, 0.22681418, 0.11476484, 0.54004586)
 bones/2/rotation = Quaternion(-0.06470268, 1.669101e-07, -1.0504785e-08, 0.9979046)
-bones/3/rotation = Quaternion(0.36350992, -0.15094805, 0.088914976, 0.91496956)
-bones/4/rotation = Quaternion(0.10851018, -0.1160517, 0.0010312055, 0.98729765)
-bones/5/rotation = Quaternion(0.0853871, 0.042772517, 0.03329284, 0.99487245)
-bones/6/rotation = Quaternion(-0.20292637, 0.061932474, -0.007401053, 0.9772055)
-bones/7/rotation = Quaternion(-0.016260566, 4.0759268e-08, -2.0568467e-09, 0.9998678)
-bones/8/rotation = Quaternion(-0.62206763, -0.26330757, -0.39096645, 0.62517697)
-bones/9/rotation = Quaternion(-0.24893749, -0.5864918, 0.6573994, -0.40234756)
-bones/10/rotation = Quaternion(0.19255564, -0.57050955, 0.13437054, 0.78701067)
-bones/11/rotation = Quaternion(-0.15750407, 0.27409726, -0.19736974, 0.92795926)
-bones/12/rotation = Quaternion(-0.08893103, 0.7027522, 0.039662622, 0.7047393)
-bones/13/rotation = Quaternion(-0.6202692, 0.26951963, 0.39200705, 0.6236633)
-bones/14/rotation = Quaternion(0.156097, -0.61555946, 0.65916985, 0.4027598)
-bones/15/rotation = Quaternion(0.42432922, 0.058359075, -0.023761384, 0.90331304)
-bones/16/rotation = Quaternion(-0.08213922, 0.033573095, 0.08503979, 0.99241847)
-bones/17/rotation = Quaternion(-0.08868901, -0.7027733, -0.03955959, 0.7047546)
-bones/18/rotation = Quaternion(0.8838133, -0.0040921695, 0.00050453516, 0.4678216)
-bones/19/rotation = Quaternion(0.3944816, 0.10568241, -0.045975313, 0.91164786)
-bones/20/rotation = Quaternion(-0.50979674, -0.14717934, 0.013247029, 0.84750813)
-bones/21/rotation = Quaternion(-0.00013712673, 0.9643068, -0.26478744, -0.0004995391)
-bones/23/rotation = Quaternion(0.9566607, -0.15602565, 0.019237597, 0.24512474)
-bones/24/rotation = Quaternion(0.46294978, 0.17531593, -0.094215594, 0.8637507)
-bones/25/rotation = Quaternion(-0.71871436, 0.06556527, -0.08220838, 0.6873083)
-bones/26/rotation = Quaternion(-0.0001371366, 0.96430665, -0.26478744, -0.0004995453)
+bones/3/rotation = Quaternion(0.2486321, -0.049289335, 0.12534116, 0.9591883)
+bones/4/rotation = Quaternion(-0.001394592, 0.2073723, -0.016776545, 0.9781172)
+bones/5/rotation = Quaternion(0.1939856, -0.16646102, -0.0601932, 0.9649027)
+bones/6/rotation = Quaternion(-0.27711204, -0.07701625, -0.028521623, 0.9573213)
+bones/7/rotation = Quaternion(-0.01626057, 4.3034262e-08, -5.353904e-09, 0.9998678)
+bones/8/rotation = Quaternion(-0.6596214, -0.25383124, -0.44575885, 0.54933447)
+bones/9/rotation = Quaternion(-0.0975356, -0.71446437, 0.35054526, -0.5976165)
+bones/10/rotation = Quaternion(0.34240946, 0.10628644, -0.03904985, 0.9327026)
+bones/11/rotation = Quaternion(0.2571859, 0.095618114, 0.028024018, 0.9612114)
+bones/12/rotation = Quaternion(-0.10483571, 0.7021199, 0.01921837, 0.7040368)
+bones/13/rotation = Quaternion(-0.6108091, 0.27223334, 0.4165466, 0.6158654)
+bones/14/rotation = Quaternion(0.590704, -0.46776122, -0.05973898, 0.65475154)
+bones/15/rotation = Quaternion(0.39551798, 0.357251, -0.17015278, 0.82884586)
+bones/16/rotation = Quaternion(-0.008958785, 0.21912497, -0.13382582, 0.96643406)
+bones/17/rotation = Quaternion(-0.23146814, -0.67709666, -0.14676356, 0.68295175)
+bones/18/rotation = Quaternion(0.64118123, 0.032439243, -0.0039997357, 0.7666931)
+bones/19/rotation = Quaternion(0.6479587, 0.07795984, -0.064285636, 0.7549432)
+bones/20/rotation = Quaternion(-0.5340587, -0.011732457, 0.11453805, 0.83757067)
+bones/21/rotation = Quaternion(-0.0960259, 0.95951366, -0.26342538, -0.026827186)
+bones/22/rotation = Quaternion(-4.662993e-08, -3.2590805e-08, -1.1647217e-10, 1)
+bones/23/rotation = Quaternion(0.87961197, -0.37426826, 0.04614638, 0.28995985)
+bones/24/rotation = Quaternion(0.7132242, 0.23954904, -0.3011704, 0.58585316)
+bones/25/rotation = Quaternion(-0.7722374, 0.006488584, -0.18830554, 0.6067523)
+bones/26/rotation = Quaternion(-0.00016772444, 0.9461244, -0.3238033, -0.0004901416)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=647515196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -142,7 +161,7 @@ max_health = 1.0
 metadata/_custom_type_script = "uid://7ypbghoip3k0"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=635234048]
-target_desired_distance = 1.5
+target_desired_distance = 2.0
 avoidance_enabled = true
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
@@ -161,6 +180,9 @@ script = ExtResource("5_wlamu")
 [node name="FollowState" type="Node" parent="StateChart/Root" unique_id=550865897]
 script = ExtResource("5_wlamu")
 
+[node name="AttackState" type="Node" parent="StateChart/Root" unique_id=369629849]
+script = ExtResource("5_wlamu")
+
 [node name="toIdle" type="Node" parent="StateChart/Root" unique_id=1573240019]
 script = ExtResource("6_cf2kt")
 to = NodePath("../IdleState")
@@ -171,6 +193,12 @@ delay_in_seconds = "0.0"
 script = ExtResource("6_cf2kt")
 to = NodePath("../FollowState")
 event = &"toFollow"
+delay_in_seconds = "0.0"
+
+[node name="toAttack" type="Node" parent="StateChart/Root" unique_id=974353394]
+script = ExtResource("6_cf2kt")
+to = NodePath("../AttackState")
+event = &"toAttack"
 delay_in_seconds = "0.0"
 
 [node name="DetectionArea" type="Area3D" parent="." unique_id=226338342]
@@ -185,11 +213,12 @@ shape = SubResource("SphereShape3D_bhunq")
 root_node = NodePath("../zombie_with_modelsv1")
 tree_root = SubResource("AnimationNodeStateMachine_bhunq")
 anim_player = NodePath("../zombie_with_modelsv1/AnimationPlayer")
-parameters/Follow/IdleChaseBlend/blend_position = -0.0008764242
+parameters/Follow/IdleChaseBlend/blend_position = 0.98685366
 parameters/Follow/TimeSeek/seek_request = -1.0
 parameters/Idle/TimeSeek/seek_request = -1.0
 
 [connection signal="state_physics_processing" from="StateChart/Root/FollowState" to="." method="_on_follow_state_physics_processing"]
+[connection signal="state_entered" from="StateChart/Root/AttackState" to="." method="_on_attack_state_entered"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
 
 [editable path="zombie_with_modelsv1"]

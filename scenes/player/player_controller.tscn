@@ -27,6 +27,7 @@ script = ExtResource("1_0cfoe")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=400386396]
 script = ExtResource("2_3y0ka")
+max_health = 5.0
 metadata/_custom_type_script = "uid://7ypbghoip3k0"
 
 [node name="PlaceholderMesh" type="MeshInstance3D" parent="." unique_id=1924111175]

@@ -3,8 +3,9 @@ extends GenisysEnemy
 
 
 @export var follow_speed: float = 3.0
-@export var acceleration: float = 20.0 # Idk what are good numbers yet, video glosses over
-@export var deceleration: float = 30.0 # Idk what are good numbers yet, video glosses over
+@export var acceleration: float = 3.0 # Idk what are good numbers yet, video glosses over
+@export var deceleration: float = 1.0 # Idk what are good numbers yet, video glosses over
+@export var melee_range: float = 1.0
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var state_chart: StateChart = $StateChart
@@ -74,11 +75,17 @@ func _on_follow_state_physics_processing(delta: float) -> void:
 	# Set target position for navigation
 	nav_agent.target_position = target.global_position
 	
+	# Check if in attack range
+	var distance = global_position.distance_to(target.global_position)
+	if distance <= melee_range:
+		state_chart.send_event("toAttack")
+		return
+	
 	# Check if navigation finished
 	if nav_agent.is_navigation_finished():
 		nav_agent.velocity = Vector3.ZERO
-		if animation_player and animation_player.current_animation != "Zombie_Idle":
-			animation_player.play("Zombie_Idle")
+		#if animation_player and animation_player.current_animation != "Zombie_Idle":
+		#	animation_player.play("Zombie_Idle")
 		return
 	
 	# Get next position in path
@@ -86,6 +93,11 @@ func _on_follow_state_physics_processing(delta: float) -> void:
 	var direction = (next_pos - global_position).normalized()
 	
 	# Set desired velocity (NavigationAgent handles avoidance)
+	#var distance = global_position.distance_to(target.global_position)
+	#var speed_factor = clamp(distance / 5.0, 0.0, 1.0)
+	#var desired_speed = follow_speed * speed_factor
+	#nav_agent.velocity = direction * desired_speed
+	
 	nav_agent.velocity = direction * follow_speed
 	
 	# Smoothly accelerate toward target
@@ -115,3 +127,45 @@ func update_blends() -> void:
 	var move_amount = velocity.length()
 	move_amount = remap(move_amount, 0.0, follow_speed, 0.0, 1.0)
 	anim_tree["parameters/Follow/IdleChaseBlend/blend_position"] = move_amount
+
+
+func attack() -> void:
+	# Stop movement
+	velocity = Vector3.ZERO
+	nav_agent.velocity = Vector3.ZERO
+	
+	# Face the player
+	if target:
+		var direction = (target.global_position - global_position).normalized()
+		var target_rotation = atan2(direction.x, direction.z)
+		rotation.y = target_rotation
+	
+	# Play the attack animation
+	if anim_tree_state.get_current_node() != "Attack":
+		anim_tree_state.travel("Attack")
+	else:
+		anim_tree_state.start("Attack")
+	
+	# Wait for animation to finish
+	await anim_tree.animation_finished	
+	
+	# Check distance to decide next state
+	if target:
+		var distance = global_position.distance_to(target.global_position)
+		if distance <= melee_range:
+			# Still in range, attack again
+			attack()
+		else:
+			# Out of range, chase again
+			state_chart.send_event("toFollow")
+
+
+func _on_attack_state_entered() -> void: # I'll leave the state logic for now, but the video basically set it all up and then immediately remove it
+	attack()
+
+
+func apply_player_damage() -> void:
+	if target:
+		var player_health_component = target.get_node_or_null("HealthComponent")
+		if player_health_component and player_health_component.has_method("take_damage"):
+			player_health_component.take_damage(1.0, self)
