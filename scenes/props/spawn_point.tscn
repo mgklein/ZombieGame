@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://cj1yw2xtkn0ke"]
 
 [ext_resource type="Script" uid="uid://c755v6vedsetc" path="res://assets/scripts/props/spawn_point.gd" id="1_cgjk5"]
+[ext_resource type="PackedScene" uid="uid://dy1ma2cor8cal" path="res://scenes/enemies/gb-simple_enemy.tscn" id="2_ucmi2"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_riqys"]
 
 [node name="SpawnPoint" type="Node3D" unique_id=2102401824]
 script = ExtResource("1_cgjk5")
+enemy_type = ExtResource("2_ucmi2")
 
 [node name="DebugSphere" type="MeshInstance3D" parent="." unique_id=1477309710]
 mesh = SubResource("SphereMesh_riqys")

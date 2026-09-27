@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b61ojcwhacduj" path="res://scenes/environment/world_environment.tscn" id="2_21g0b"]
 [ext_resource type="PackedScene" uid="uid://bbbwdi513svcb" path="res://scenes/player/player_controller.tscn" id="3_0f5xv"]
 [ext_resource type="PackedScene" uid="uid://d1dv8d3by2dvw" path="res://scenes/enemies/simple_enemy.tscn" id="5_0f5xv"]
-[ext_resource type="PackedScene" uid="uid://cj1yw2xtkn0ke" path="res://scenes/props/spawn_point.tscn" id="5_i83pu"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_bhunq"]
 vertices = PackedVector3Array(8.75, 0.5, -2.5, 10, 0.5, -2.5, 10, 0.5, -24.5, 7.75, 0.5, -1.75, 7.5, 0.5, 0, -24.5, 0.5, -24.5, -24.5, 0.5, 0, 11.75, 0.5, -2.25, 12.75, 0.5, 0, 24.5, 0.5, 0, 24.5, 0.5, -24.5, 10.75, 5.5, 1.5, 11.5, 5.5, 0.75, 11.5, 5.5, -0.75, 9.25, 5.5, -1.5, 8.5, 5.5, -0.75, 8.75, 5.5, 1.25, 10.75, 5.5, -1.5, 11.25, 0.5, 0.5, 10.5, 0.5, -1.25, 8.75, 0.5, -0.5, 8.75, 0.5, 0.5, 9.5, 0.5, 1.25, 10.5, 0.5, 1.25, 9.5, 0.5, -1.25, 11.25, 0.5, -0.5, 10, 0.5, 24.5, 10, 0.5, 2.5, 8.75, 0.5, 2.5, 7.75, 0.5, 1.75, -24.5, 0.5, 24.5, 11.75, 0.5, 2.25, 24.5, 0.5, 24.5)
@@ -104,16 +103,7 @@ path_controller = NodePath("..")
 
 [node name="SimpleEnemy" parent="." unique_id=1560393251 instance=ExtResource("5_0f5xv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.095, -0.09953126, -8.29)
-
-[node name="SpawnPoint" parent="." unique_id=837738906 instance=ExtResource("5_i83pu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.152076, 0.49999905, -10.734002)
-enemy_type = ExtResource("5_0f5xv")
-
-[node name="SpawnPoint2" parent="." unique_id=1637413841 instance=ExtResource("5_i83pu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.877161, 0.49999905, -17.61884)
-enemy_type = ExtResource("5_0f5xv")
-
-[node name="SpawnPoint3" parent="." unique_id=2102401824 instance=ExtResource("5_i83pu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.854774, 0.49999905, -5.7820272)
-spawn_group_num = 2
-enemy_type = ExtResource("5_0f5xv")
+follow_speed = null
+acceleration = null
+deceleration = null
+enemy_groups = null

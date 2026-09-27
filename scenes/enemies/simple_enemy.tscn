@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d1dv8d3by2dvw"]
 
 [ext_resource type="Script" uid="uid://6pp8su502mwb" path="res://assets/scripts/enemies/simple_enemy.gd" id="1_2kgy0"]
+[ext_resource type="PackedScene" uid="uid://iecqn5kihws4" path="res://assets/Gunnie/Zombie Models/zombie_with_modelsv1.glb" id="2_fgow6"]
 [ext_resource type="Script" uid="uid://7ypbghoip3k0" path="res://assets/scripts/components/health_component.gd" id="2_ho7jy"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="3_fgow6"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="4_qwvii"]
@@ -21,15 +22,118 @@ height = 1.8
 [sub_resource type="SphereShape3D" id="SphereShape3D_bhunq"]
 radius = 50.0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ho7jy"]
+animation = &"Zombie_Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fgow6"]
+animation = &"Zombie_Walk"
+
+[sub_resource type="AnimationNodeBlendSpace1D" id="AnimationNodeBlendSpace1D_qwvii"]
+min_space = 0.0
+blend_point_0/node = SubResource("AnimationNodeAnimation_ho7jy")
+blend_point_0/pos = 0.0
+blend_point_0/name = &"Zombie_Idle"
+blend_point_1/node = SubResource("AnimationNodeAnimation_fgow6")
+blend_point_1/pos = 1.0
+blend_point_1/name = &"Zombie_Walk"
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_wlamu"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cf2kt"]
+graph_offset = Vector2(-327.8272, 13.345444)
+nodes/IdleChaseBlend/node = SubResource("AnimationNodeBlendSpace1D_qwvii")
+nodes/IdleChaseBlend/position = Vector2(-20, 120)
+nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_wlamu")
+nodes/TimeSeek/position = Vector2(160, 120)
+node_connections = [&"output", 0, &"TimeSeek", &"TimeSeek", 0, &"IdleChaseBlend"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tmdn1"]
+animation = &"Zombie_Idle"
+
+[sub_resource type="AnimationNodeTimeSeek" id="AnimationNodeTimeSeek_bguu8"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_7g21x"]
+graph_offset = Vector2(-233.4295, 114.22136)
+nodes/output/position = Vector2(460, 280)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_tmdn1")
+nodes/Animation/position = Vector2(51.034557, 228.3065)
+nodes/TimeSeek/node = SubResource("AnimationNodeTimeSeek_bguu8")
+nodes/TimeSeek/position = Vector2(280, 220)
+node_connections = [&"output", 0, &"TimeSeek", &"TimeSeek", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o6bu6"]
+animation = &"Zombie_Rise"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_v047c"]
+graph_offset = Vector2(-87.97525, 41.504112)
+nodes/output/position = Vector2(620, 120)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_o6bu6")
+nodes/Animation/position = Vector2(320, 160)
+node_connections = [&"output", 0, &"Animation"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xp73g"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2okpx"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dxmbq"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7bpfv"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_bhunq"]
+states/Follow/node = SubResource("AnimationNodeBlendTree_cf2kt")
+states/Follow/position = Vector2(750, 147)
+states/Idle/node = SubResource("AnimationNodeBlendTree_7g21x")
+states/Idle/position = Vector2(554, 138)
+states/Spawn/node = SubResource("AnimationNodeBlendTree_v047c")
+states/Spawn/position = Vector2(388, 121)
+transitions = ["Start", "Spawn", SubResource("AnimationNodeStateMachineTransition_xp73g"), "Spawn", "Idle", SubResource("AnimationNodeStateMachineTransition_2okpx"), "Idle", "Follow", SubResource("AnimationNodeStateMachineTransition_dxmbq"), "Follow", "Idle", SubResource("AnimationNodeStateMachineTransition_7bpfv")]
+
 [node name="SimpleEnemy" type="CharacterBody3D" unique_id=1560393251]
 script = ExtResource("1_2kgy0")
+follow_speed = 1.0
+
+[node name="zombie_with_modelsv1" parent="." unique_id=204081870 instance=ExtResource("2_fgow6")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="Skeleton3D" parent="zombie_with_modelsv1/Skinned Mesh 1" parent_id_path=PackedInt32Array(204081870, 283054957) index="0" unique_id=1551314177]
+bones/1/position = Vector3(-0.0005105496, 0.16023336, 0.8166234)
+bones/1/rotation = Quaternion(0.7758059, 0.061793026, 0.0465691, 0.62620944)
+bones/2/rotation = Quaternion(-0.06470268, 1.669101e-07, -1.0504785e-08, 0.9979046)
+bones/3/rotation = Quaternion(0.36350992, -0.15094805, 0.088914976, 0.91496956)
+bones/4/rotation = Quaternion(0.10851018, -0.1160517, 0.0010312055, 0.98729765)
+bones/5/rotation = Quaternion(0.0853871, 0.042772517, 0.03329284, 0.99487245)
+bones/6/rotation = Quaternion(-0.20292637, 0.061932474, -0.007401053, 0.9772055)
+bones/7/rotation = Quaternion(-0.016260566, 4.0759268e-08, -2.0568467e-09, 0.9998678)
+bones/8/rotation = Quaternion(-0.62206763, -0.26330757, -0.39096645, 0.62517697)
+bones/9/rotation = Quaternion(-0.24893749, -0.5864918, 0.6573994, -0.40234756)
+bones/10/rotation = Quaternion(0.19255564, -0.57050955, 0.13437054, 0.78701067)
+bones/11/rotation = Quaternion(-0.15750407, 0.27409726, -0.19736974, 0.92795926)
+bones/12/rotation = Quaternion(-0.08893103, 0.7027522, 0.039662622, 0.7047393)
+bones/13/rotation = Quaternion(-0.6202692, 0.26951963, 0.39200705, 0.6236633)
+bones/14/rotation = Quaternion(0.156097, -0.61555946, 0.65916985, 0.4027598)
+bones/15/rotation = Quaternion(0.42432922, 0.058359075, -0.023761384, 0.90331304)
+bones/16/rotation = Quaternion(-0.08213922, 0.033573095, 0.08503979, 0.99241847)
+bones/17/rotation = Quaternion(-0.08868901, -0.7027733, -0.03955959, 0.7047546)
+bones/18/rotation = Quaternion(0.8838133, -0.0040921695, 0.00050453516, 0.4678216)
+bones/19/rotation = Quaternion(0.3944816, 0.10568241, -0.045975313, 0.91164786)
+bones/20/rotation = Quaternion(-0.50979674, -0.14717934, 0.013247029, 0.84750813)
+bones/21/rotation = Quaternion(-0.00013712673, 0.9643068, -0.26478744, -0.0004995391)
+bones/23/rotation = Quaternion(0.9566607, -0.15602565, 0.019237597, 0.24512474)
+bones/24/rotation = Quaternion(0.46294978, 0.17531593, -0.094215594, 0.8637507)
+bones/25/rotation = Quaternion(-0.71871436, 0.06556527, -0.08220838, 0.6873083)
+bones/26/rotation = Quaternion(-0.0001371366, 0.96430665, -0.26478744, -0.0004995453)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=647515196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("BoxMesh_bhunq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=6568200]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 shape = SubResource("CapsuleShape3D_sn0t7")
 
 [node name="HealthComponent" type="Node" parent="." unique_id=323829948]
@@ -38,7 +142,7 @@ max_health = 1.0
 metadata/_custom_type_script = "uid://7ypbghoip3k0"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=635234048]
-target_desired_distance = 1.1
+target_desired_distance = 1.5
 avoidance_enabled = true
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
@@ -77,5 +181,15 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=26803936]
 shape = SubResource("SphereShape3D_bhunq")
 
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1675276155]
+root_node = NodePath("../zombie_with_modelsv1")
+tree_root = SubResource("AnimationNodeStateMachine_bhunq")
+anim_player = NodePath("../zombie_with_modelsv1/AnimationPlayer")
+parameters/Follow/IdleChaseBlend/blend_position = -0.0008764242
+parameters/Follow/TimeSeek/seek_request = -1.0
+parameters/Idle/TimeSeek/seek_request = -1.0
+
 [connection signal="state_physics_processing" from="StateChart/Root/FollowState" to="." method="_on_follow_state_physics_processing"]
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+
+[editable path="zombie_with_modelsv1"]
