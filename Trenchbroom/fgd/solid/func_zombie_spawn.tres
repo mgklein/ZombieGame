@@ -13,7 +13,7 @@ class_properties = Dictionary[String, Variant]({
 "max_spawn_delay": 0.0,
 "min_spawn_delay": 0.0,
 "num_to_spawn": 0,
-"spawn_group_str": "Enemy1"
+"spawn_group_num": "Enemy1"
 })
 node_class = "Node3D"
 metadata/_custom_type_script = "uid://5cow84q03m6a"

@@ -124,31 +124,12 @@
 ( 432 -712 128 ) ( 433 -712 128 ) ( 432 -712 129 ) bar/ceiling [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
 ( 432 -712 128 ) ( 432 -712 129 ) ( 432 -711 128 ) bar/ceiling [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
 }
-// brush 13
-{
-( 168 -56 120 ) ( 168 -55 120 ) ( 168 -56 121 ) bar/ceiling [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 168 -56 120 ) ( 168 -56 121 ) ( 169 -56 120 ) bar/ceiling [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 168 -56 120 ) ( 169 -56 120 ) ( 168 -55 120 ) bar/ceiling [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 208 0 128 ) ( 208 1 128 ) ( 209 0 128 ) bar/ceiling [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 208 0 128 ) ( 209 0 128 ) ( 208 0 129 ) bar/ceiling [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 208 0 128 ) ( 208 0 129 ) ( 208 1 128 ) bar/ceiling [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
-// brush 14
-{
-( 416 -768 120 ) ( 416 -767 120 ) ( 416 -768 121 ) bar/ceiling [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 416 -768 120 ) ( 416 -768 121 ) ( 417 -768 120 ) bar/ceiling [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 416 -768 120 ) ( 417 -768 120 ) ( 416 -767 120 ) bar/ceiling [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 456 -712 128 ) ( 456 -711 128 ) ( 457 -712 128 ) bar/ceiling [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 1 1
-( 456 -712 128 ) ( 457 -712 128 ) ( 456 -712 129 ) bar/ceiling [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 1 1
-( 456 -712 128 ) ( 456 -712 129 ) ( 456 -711 128 ) bar/ceiling [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 1 1
-}
 }
 // entity 1
 {
 "classname" "func_zombiespawn"
 "num_to_spawn" "2"
 "max_spawn_delay" "2"
-"spawn_group_num" "Enemy1"
 // brush 0
 {
 ( -336 -264 -48 ) ( -336 -263 -48 ) ( -336 -264 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -171,7 +152,6 @@
 "max_spawn_delay" ".8"
 "min_spawn_delay" ".5"
 "spawn_group_str" "Enemy0"
-"spawn_group_num" "Enemy0"
 // brush 0
 {
 ( -720 80 -48 ) ( -720 81 -48 ) ( -720 80 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -189,7 +169,6 @@
 "min_spawn_delay" "0"
 "max_spawn_delay" "0.25"
 "spawn_group_str" "Enemy0"
-"spawn_group_num" "Enemy0"
 // brush 0
 {
 ( -608 224 -48 ) ( -608 225 -48 ) ( -608 224 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -207,7 +186,6 @@
 "min_spawn_delay" ".25"
 "max_spawn_delay" "0.5"
 "spawn_group_str" "Enemy0"
-"spawn_group_num" "Enemy0"
 // brush 0
 {
 ( -832 240 -48 ) ( -832 241 -48 ) ( -832 240 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -280,7 +258,6 @@
 "max_spawn_delay" "2"
 "min_spawn_delay" "1"
 "num_to_spawn" "4"
-"spawn_group_num" "Enemy2"
 // brush 0
 {
 ( 16 144 -48 ) ( 16 145 -48 ) ( 16 144 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -298,7 +275,6 @@
 "max_spawn_delay" "2"
 "min_spawn_delay" "1"
 "num_to_spawn" "4"
-"spawn_group_num" "Enemy3"
 // brush 0
 {
 ( 184 144 -48 ) ( 184 145 -48 ) ( 184 144 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -312,12 +288,11 @@
 // entity 19
 {
 "classname" "func_zombiespawn"
-"spawn_group_str" ""
+"spawn_group_str" "Enemy4"
 "max_spawn_delay" "6"
 "min_spawn_delay" "2"
 "num_to_spawn" "4"
 "" "Enemy4"
-"spawn_group_num" "Enemy4"
 // brush 0
 {
 ( 384 272 -48 ) ( 384 273 -48 ) ( 384 272 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -335,7 +310,6 @@
 "max_spawn_delay" "1"
 "min_spawn_delay" "0"
 "num_to_spawn" "6"
-"spawn_group_num" "Enemy4"
 // brush 0
 {
 ( 368 -680 -48 ) ( 368 -679 -48 ) ( 368 -680 -47 ) default/skip [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1
@@ -655,74 +629,4 @@
 "classname" "bar_stool"
 "origin" "-360.729 -506.467 -41.183"
 "angle" "-2"
-}
-// entity 53
-{
-"classname" "base_light"
-"origin" "400 -408 112"
-}
-// entity 54
-{
-"classname" "base_light"
-"origin" "424 -408 112"
-}
-// entity 55
-{
-"classname" "base_light"
-"origin" "424 -368 112"
-}
-// entity 56
-{
-"classname" "base_light"
-"origin" "-40 -368 112"
-}
-// entity 57
-{
-"classname" "base_light"
-"origin" "-40 -408 112"
-}
-// entity 58
-{
-"classname" "base_light"
-"origin" "-16 -408 112"
-}
-// entity 59
-{
-"classname" "base_light"
-"origin" "200 -48 112"
-}
-// entity 60
-{
-"classname" "base_light"
-"origin" "200 -8 112"
-}
-// entity 61
-{
-"classname" "base_light"
-"origin" "176 -8 112"
-}
-// entity 62
-{
-"classname" "base_light"
-"origin" "176 -48 112"
-}
-// entity 63
-{
-"classname" "base_light"
-"origin" "448 -760 112"
-}
-// entity 64
-{
-"classname" "base_light"
-"origin" "448 -720 112"
-}
-// entity 65
-{
-"classname" "base_light"
-"origin" "424 -720 112"
-}
-// entity 66
-{
-"classname" "base_light"
-"origin" "424 -760 112"
 }
