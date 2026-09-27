@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byxm52qdq1j52" path="res://assets/scripts/ui/reticle_draw.gd" id="1_284y0"]
 [ext_resource type="Script" uid="uid://cm8v3h18sqjym" path="res://assets/scripts/ui/user_interface.gd" id="1_hj6hg"]
-[ext_resource type="Script" uid="uid://bwxekrlgh5blt" path="res://addons/segmented_bar/segmented_bar.gd" id="2_hj6hg"]
+[ext_resource type="Script" uid="uid://b623jswyeaqhn" path="res://addons/segmented_bar/segmented_bar.gd" id="2_hj6hg"]
 
 [node name="UserInterface" type="CanvasLayer" unique_id=851801993]
 script = ExtResource("1_hj6hg")
@@ -40,4 +40,3 @@ script = ExtResource("2_hj6hg")
 max_value = 5.0
 value = 5.0
 total_segments = 5
-metadata/_custom_type_script = "uid://bwxekrlgh5blt"

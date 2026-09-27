@@ -20,9 +20,4 @@ func _process(delta: float) -> void:
 	# Connect signals
 	if player:
 		var health_component = player.get_node_or_null("HealthComponent")
-		if health_component and not health_component.health_changed.is_connected(_on_player_health_changed):
-			health_component.health_changed.connect(_on_player_health_changed)
-
-
-func _on_player_health_changed(new_health: float, max_health: float) -> void:
-	health_bar.slow_change(new_health, Color.GHOST_WHITE, 1.0)
+		health_bar.slow_change(health_component.current_health, Color.GHOST_WHITE, 1.0)
