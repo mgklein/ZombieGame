@@ -6,6 +6,8 @@ extends GenisysEnemy
 @export var acceleration: float = 3.0 # Idk what are good numbers yet, video glosses over
 @export var deceleration: float = 1.0 # Idk what are good numbers yet, video glosses over
 @export var melee_range: float = 1.0
+@export var footsteps_player: AudioStreamPlayer3D
+
 
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var state_chart: StateChart = $StateChart
@@ -72,6 +74,7 @@ func _on_velocity_computed(safe_velocity: Vector3) -> void:
 func _on_follow_state_physics_processing(delta: float) -> void:
 	if anim_tree_state.get_current_node() == "Idle":
 		anim_tree_state.travel("Follow")
+		footsteps_player.play()
 	
 	if not target or not ready_to_follow:
 		return

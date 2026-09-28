@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtt4k4x7sot2t"
+path="res://.godot/imported/zombie c.mp3-98fa731bea3fcfd532a80ba87202bac8.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/zombie c.mp3"
+dest_files=["res://.godot/imported/zombie c.mp3-98fa731bea3fcfd532a80ba87202bac8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
