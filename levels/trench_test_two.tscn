@@ -478,10 +478,10 @@ tracks/0/path = NodePath("MovementPath/PathController/PlayerController:position"
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.01, 4, 5.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 3.01, 4, 5.25, 7.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(-22.42235, -0.3380531, 9.909498), Vector3(-22.42235, -0.3380531, 16.982985), Vector3(-22.42235, -0.3380531, 16.982985), Vector3(-28.237793, -0.3380531, 16.982985)]
+"values": [Vector3(-22.42235, -0.3380531, 9.909498), Vector3(-22.42235, -0.3380531, 16.982985), Vector3(-22.42235, -0.3380531, 16.982985), Vector3(-28.237793, -0.3380531, 16.982985), Vector3(-27.167707, -0.84314924, 15.92416)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -1158,7 +1158,7 @@ max_spawn_delay = 1.0
 enemy_type = ExtResource("11_4tocl")
 
 [node name="entity_93_bar_tv" parent="NavigationRegion3D/FuncGodotMap" unique_id=228783075 instance=ExtResource("17_oy6rn")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -27.674437, -0.5, 14.682656)
+transform = Transform3D(0.9966993, 0, 0.08118221, 0, 1, 0, -0.08118221, 0, 0.9966993, -27.674437, -0.5, 14.682656)
 
 [node name="MovementPath" type="Path3D" parent="." unique_id=286214845]
 transform = Transform3D(0.22458561, 0, -0.97445434, 0, 1, 0, 0.97445434, 0, 0.22458561, -11.927178, -1.3380501, -22.003782)
@@ -1168,13 +1168,12 @@ curve = SubResource("Curve3D_8dew3")
 transform = Transform3D(0.99883884, 0, -0.048043378, 0, 0.999997, 0, 0.04804344, 0, 0.99883753, 0, 0, 0)
 
 [node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller", "custcenes") instance=ExtResource("5_gdast")]
-transform = Transform3D(-0.2334557, 0, -0.9723688, 0, 1.0000004, 0, 0.9723707, 0, -0.23345584, 0, 0.99999976, 0)
+transform = Transform3D(-0.9983703, 0, 0.05714296, 0, 1.0000001, 0, -0.05714322, 0, -0.9983658, -11.927178, -0.3380531, -22.003782)
 collision_mask = 3
 path_controller = NodePath("..")
 custcenes = NodePath("Cutscenes")
 
 [node name="Cutscenes" type="AnimationPlayer" parent="MovementPath/PathController/PlayerController" unique_id=998591472]
-active = false
 root_node = NodePath("../../../..")
 libraries/ = SubResource("AnimationLibrary_c8fqj")
 

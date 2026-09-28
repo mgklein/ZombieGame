@@ -19,6 +19,7 @@ signal spawn_enemies(spawn_group: int)
 		#if spawner.has_method("_on_player_controller_spawn_enemies"):
 			#self.spawn_enemies.connect(spawner._on_player_controller_spawn_enemies)
 func _ready() -> void:
+	position = Vector3(0,1,0)
 	pass
 
 
@@ -48,7 +49,7 @@ func move_player():
 	print("moving to " + str(position_index))
 	move_along_path_smoothly(get_target_progress())
 	await get_tree().create_timer(duration).timeout
-	spawn_enemies.emit(position_index)
+	#spawn_enemies.emit(position_index)
 	if position_index == 5:
 		custcenes.active = true
 		print("play animation")
