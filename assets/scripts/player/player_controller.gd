@@ -48,12 +48,12 @@ func move_player():
 	print("moving to " + str(position_index))
 	move_along_path_smoothly(get_target_progress())
 	await get_tree().create_timer(duration).timeout
-	#spawn_enemies.emit(position_index)
+	spawn_enemies.emit(position_index)
 	if position_index == 5:
 		custcenes.active = true
 		print("play animation")
 		custcenes.play("Start Cutscene")
-		
+		disable_mode
 
 
 func _physics_process(delta: float) -> void:
