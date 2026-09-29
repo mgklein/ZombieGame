@@ -17,11 +17,12 @@ func _on_main_menu_button_pressed() -> void:
 func _on_restart_pressed() -> void:
 	Global.game_controller.current_hud.visible = true
 	Global.game_controller.current_menu.visible = false
+	var level_to_restart: String = Global.game_controller.current_level.scene_file_path
 	Global.game_controller.current_level.queue_free()
 	get_tree().paused = false
 	await get_tree().process_frame
 	await get_tree().physics_frame
-	Global.game_controller.change_level_scene("res://levels/prototype_level_matt.tscn")
+	Global.game_controller.change_level_scene(level_to_restart)
 
 
 func _on_quit_button_pressed() -> void:
