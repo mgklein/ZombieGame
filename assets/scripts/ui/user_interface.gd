@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	charge_indicator.custom_minimum_size = Vector2(10.0, charge_level * 100)
 	# Find player
-	var player = get_tree().get_first_node_in_group("player")
+	player = get_tree().get_first_node_in_group("player")
 	
 	# Connect signals
 	if player:

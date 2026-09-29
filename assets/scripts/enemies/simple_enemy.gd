@@ -56,6 +56,10 @@ func on_triggered() -> void:
 
 
 func _on_died() -> void:
+	ready_to_follow = false
+	nav_agent.velocity = Vector3.ZERO
+	anim_tree_state.travel("Death")
+	await anim_tree.animation_finished
 	queue_free()
 
 
@@ -147,7 +151,7 @@ func attack() -> void:
 		anim_tree_state.start("Attack")
 	
 	# Wait for animation to finish
-	await anim_tree.animation_finished	
+	await anim_tree.animation_finished
 	
 	# Check distance to decide next state
 	if target:
