@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://baejvbw670byd"]
+
+[ext_resource type="PackedScene" uid="uid://d0c4c648k3xjm" path="res://assets/Gunnie/Bar/tv first try.glb" id="1_1bc3c"]
+[ext_resource type="Texture2D" uid="uid://05sufsipb4mm" path="res://assets/Gunnie/Bar/news awful.png" id="2_eug4e"]
+
+[node name="Node3D" type="Node3D" unique_id=228783075]
+
+[node name="tv first try" parent="." unique_id=1931682261 instance=ExtResource("1_1bc3c")]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=882861522]
+transform = Transform3D(0.18605836, 0, 0, 0, 0.19237049, 0, 0, 0, 0.7084961, 0.014375746, 0.06989047, 0.3210178)
+texture = ExtResource("2_eug4e")

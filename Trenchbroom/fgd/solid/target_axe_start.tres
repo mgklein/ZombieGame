@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDSolidClass" format=3 uid="uid://dofj5yscsefeb"]
+
+[ext_resource type="Script" uid="uid://5cow84q03m6a" path="res://addons/func_godot/src/fgd/func_godot_fgd_solid_class.gd" id="1_2nldp"]
+[ext_resource type="Script" uid="uid://bpqyd7rarsjot" path="res://assets/scripts/props/target_axe.gd" id="2_ue6sq"]
+
+[resource]
+script = ExtResource("1_2nldp")
+script_class = ExtResource("2_ue6sq")
+classname = "target_axe_start"
+description = "This is the target to start the game when player hits it"
+node_class = "StaticBody3D"
+metadata/_custom_type_script = "uid://5cow84q03m6a"

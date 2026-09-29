@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDPointClass" format=3 uid="uid://b6r35aap2x8hn"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_mo5db"]
+[ext_resource type="Script" uid="uid://cxsqwtsqd8w33" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class.gd" id="2_071xn"]
+[ext_resource type="Script" uid="uid://c1hgdnu877gtw" path="res://assets/scripts/props/base_light.gd" id="3_071xn"]
+
+[resource]
+script = ExtResource("2_071xn")
+script_class = ExtResource("3_071xn")
+classname = "base_light"
+description = "It's a base light"
+node_class = "OmniLight3D"
+metadata/_custom_type_script = "uid://cxsqwtsqd8w33"

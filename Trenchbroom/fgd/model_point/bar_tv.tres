@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" format=3 uid="uid://c5cd1mcywxuih"]
+
+[ext_resource type="Script" uid="uid://d1nwwgcrner8b" path="res://addons/func_godot/src/fgd/func_godot_fgd_point_class_display_descriptor.gd" id="1_upu7o"]
+[ext_resource type="PackedScene" uid="uid://baejvbw670byd" path="res://scenes/props/tv.tscn" id="2_ditur"]
+[ext_resource type="Script" uid="uid://ldfqjtq0br35" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="2_g0akm"]
+
+[resource]
+script = ExtResource("2_g0akm")
+target_map_editor = 1
+generate_size_property = true
+scene_file = ExtResource("2_ditur")
+classname = "bar_tv"
+description = "It's a tv saying sppoky things!"
+meta_properties = Dictionary[String, Variant]({
+"color": Color(0.8, 0.8, 0.8, 1),
+"model": "{\"path\": \"bar_tv.glb\", \"scale\": 32.0 }",
+"size": AABB(-21, -10, -8, 11, 11, 30)
+})
+metadata/_custom_type_script = "uid://ldfqjtq0br35"
