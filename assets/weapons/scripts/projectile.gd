@@ -34,7 +34,7 @@ func _on_body_entered(body: Node3D) -> void:
 		if health_component and health_component.has_method("take_damage"):
 			health_component.take_damage(damage, self)
 		
-		if body.has_method("change_all_lights_red"):
+		if body.is_in_group("start_trigger"):
 			body.change_all_lights_red()
 			print("has lights method")
 		

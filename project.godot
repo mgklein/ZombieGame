@@ -41,6 +41,7 @@ folder_colors={
 
 player="Makes PlayerController easily available."
 geometry=""
+start_trigger=""
 
 [input]
 

@@ -1100,7 +1100,7 @@ max_spawn_delay = 5.0
 spawn_group_num = 3
 enemy_type = ExtResource("11_4tocl")
 
-[node name="entity_73_target_axe_start" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=853406351]
+[node name="entity_73_target_axe_start" type="StaticBody3D" parent="NavigationRegion3D/FuncGodotMap" unique_id=853406351 groups=["start_trigger"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.75, 1, -21.25)
 script = ExtResource("14_ha8ss")
 
@@ -1167,11 +1167,10 @@ curve = SubResource("Curve3D_8dew3")
 [node name="PathController" type="PathFollow3D" parent="MovementPath" unique_id=1400512233]
 transform = Transform3D(0.99883884, 0, -0.048043378, 0, 0.999997, 0, 0.04804344, 0, 0.99883753, 0, 0, 0)
 
-[node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller", "custcenes") instance=ExtResource("5_gdast")]
+[node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller") instance=ExtResource("5_gdast")]
 transform = Transform3D(-0.9983703, 0, 0.05714296, 0, 1.0000001, 0, -0.05714322, 0, -0.9983658, -11.927178, -0.3380531, -22.003782)
 collision_mask = 3
 path_controller = NodePath("..")
-custcenes = NodePath("Cutscenes")
 
 [node name="Cutscenes" type="AnimationPlayer" parent="MovementPath/PathController/PlayerController" unique_id=998591472]
 root_node = NodePath("../../../..")
