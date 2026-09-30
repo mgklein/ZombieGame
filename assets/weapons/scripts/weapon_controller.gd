@@ -1,6 +1,6 @@
 class_name WeaponController extends Node
 
-@export var camera: Camera3D
+@export var camera: CameraEffects
 @export var current_weapon: Weapon
 @export var weapon_model_parent: Node3D
 @export var weapon_state_chart: StateChart
@@ -32,6 +32,7 @@ func can_fire() -> bool:
 func fire_weapon() -> void:
 	if can_fire():
 		current_ammo -= 1
+		camera.add_weapon_kick(10.0, 10.0, 10.0)
 		print ("Throwing axe. Axes left: ", current_ammo)
 		
 		if current_weapon.is_hitscan:
