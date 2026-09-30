@@ -1,9 +1,10 @@
 class_name PlayerController extends CharacterBody3D
 
+@export var camera_effects: CameraEffects
 @export var path_controller : PathFollow3D
 @export var duration: float = 4.0 # Time in seconds to complete a path movement
 @export var num_stop_positions = 5
-@export var custcenes: AnimationPlayer
+@export var cutscenes: AnimationPlayer
 
 @onready var health_component: HealthComponent = $HealthComponent
 
@@ -20,7 +21,8 @@ signal spawn_enemies(spawn_group: int)
 			#self.spawn_enemies.connect(spawner._on_player_controller_spawn_enemies)
 func _ready() -> void:
 	position = Vector3(0,1,0)
-	pass
+	if health_component and health_component.has_signal("damage_taken"):
+		health_component.damage_taken.connect(_on_damage_taken)
 
 
 func update_rotation(rotation_input) -> void:
@@ -49,14 +51,17 @@ func move_player():
 	print("moving to " + str(position_index))
 	move_along_path_smoothly(get_target_progress())
 	await get_tree().create_timer(duration).timeout
-	#spawn_enemies.emit(position_index)
+	spawn_enemies.emit(position_index)
 	if position_index == 5:
-		custcenes.active = true
+		cutscenes.active = true
 		print("play animation")
-		custcenes.play("Start Cutscene")
-		disable_mode
+		cutscenes.play("Start Cutscene")
 
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_move"):
 		move_player()
+
+
+func _on_damage_taken(amount: float, source: Node3D):
+	camera_effects.add_damage_kick(1.0, 1.0, source.global_position)
