@@ -1,4 +1,3 @@
-@tool
 class_name PlayerController extends CharacterBody3D
 
 @export var camera_effects: CameraEffects
