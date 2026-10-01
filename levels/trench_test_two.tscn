@@ -1370,11 +1370,12 @@ curve = SubResource("Curve3D_8dew3")
 [node name="PathController" type="PathFollow3D" parent="MovementPath" unique_id=1400512233]
 transform = Transform3D(0.99883884, 0, -0.048043378, 0, 0.999997, 0, 0.04804344, 0, 0.99883753, 0, 0, 0)
 
-[node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller") instance=ExtResource("5_gdast")]
-transform = Transform3D(-0.99836385, 0, 0.057142515, 0, 0.9999971, 0, -0.05714285, 0, -0.998358, -11.927178, -0.3380531, -22.003782)
+[node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller", "cutscenes") instance=ExtResource("5_gdast")]
+transform = Transform3D(-0.99836385, 0, 0.057142515, 0, 0.9999971, 0, -0.05714285, 0, -0.99835795, -11.927178, -0.3380531, -22.003782)
 top_level = true
 collision_mask = 3
 path_controller = NodePath("..")
+cutscenes = NodePath("Cutscenes")
 
 [node name="Cutscenes" type="AnimationPlayer" parent="MovementPath/PathController/PlayerController" unique_id=998591472]
 root_node = NodePath("../../../..")

@@ -27,7 +27,7 @@ func setup(vel: Vector3, dmg: float, grav: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if not body.name == "PlayerController":
 		print("Projectile hit: ", body.name, " at ", global_position)
-		_spawn_impact_marker(global_position)
+		#_spawn_impact_marker(global_position)
 		
 		var health_component = body.get_node_or_null("HealthComponent")
 		

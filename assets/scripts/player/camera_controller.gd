@@ -10,15 +10,17 @@ class_name CameraController extends Node3D
 @export_range(60, 90) var tilt_upper_limit : int = 90
 
 var _rotation : Vector3
+var _lock_camera: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_rotation.y = deg_to_rad(90.0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	update_camera_rotation(component_mouse_capture._mouse_input)
+	if not _lock_camera:
+		update_camera_rotation(component_mouse_capture._mouse_input)
 
 func update_camera_rotation(input: Vector2) -> void:
 	_rotation.x += input.y
@@ -32,3 +34,7 @@ func update_camera_rotation(input: Vector2) -> void:
 	player_controller.update_rotation(_player_rotation)
 	
 	rotation.z = 0.0
+
+
+func _on_player_controller_lock_camera() -> void:
+	_lock_camera = true
