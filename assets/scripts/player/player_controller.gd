@@ -20,6 +20,7 @@ signal spawn_enemies(spawn_group: int)
 		#if spawner.has_method("_on_player_controller_spawn_enemies"):
 			#self.spawn_enemies.connect(spawner._on_player_controller_spawn_enemies)
 func _ready() -> void:
+	top_level = false
 	position = Vector3(0,1,0)
 	if health_component and health_component.has_signal("damage_taken"):
 		health_component.damage_taken.connect(_on_damage_taken)
