@@ -467,6 +467,54 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("entity_90_base_light3:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("entity_90_base_light2:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("entity_90_base_light3:light_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0, 0, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("entity_90_base_light2:light_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_tbfb6"]
 resource_name = "Start Cutscene"
@@ -493,7 +541,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 3.02, 3.99, 5.24, 6.65),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 3.0626135, 0), Vector3(0, 3.0626135, 0), Vector3(0, 1.5881872, 0), Vector3(0, 1.5881872, 0), Vector3(0, 0.02626564, 0)]
+"values": [Vector3(-0.024150232, 3.0625904, 0.0019117135), Vector3(0, 3.0626135, 0), Vector3(0, 1.5881872, 0), Vector3(0, 1.5881872, 0), Vector3(0, 0.02626564, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -506,6 +554,54 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("entity_90_base_light3:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8.244858, 8.254858),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0.0, 1.0, 8.899]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("entity_90_base_light2:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8.244858),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.0, 5.975]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("entity_90_base_light3:light_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8.264857, 9.434857, 10.394857),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(0, 0, 1, 1), Color(1, 0, 0, 1), Color(0, 0, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("entity_90_base_light2:light_color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(8.264857, 9.434857, 10.394857),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Color(1, 0, 0, 1), Color(0, 0, 1, 1), Color(1, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c8fqj"]
@@ -1158,7 +1254,7 @@ max_spawn_delay = 1.0
 enemy_type = ExtResource("11_4tocl")
 
 [node name="entity_93_bar_tv" parent="NavigationRegion3D/FuncGodotMap" unique_id=228783075 instance=ExtResource("17_oy6rn")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -27.674437, -0.5, 14.682656)
+transform = Transform3D(0.99996006, 0, 0.008935269, 0, 1, 0, -0.008935269, 0, 0.99996006, -27.674437, -0.5, 14.682656)
 
 [node name="MovementPath" type="Path3D" parent="." unique_id=286214845]
 transform = Transform3D(0.22458561, 0, -0.97445434, 0, 1, 0, 0.97445434, 0, 0.22458561, -11.927178, -1.3380501, -22.003782)
@@ -1167,11 +1263,11 @@ curve = SubResource("Curve3D_8dew3")
 [node name="PathController" type="PathFollow3D" parent="MovementPath" unique_id=1400512233]
 transform = Transform3D(0.99883884, 0, -0.048043378, 0, 0.999997, 0, 0.04804344, 0, 0.99883753, 0, 0, 0)
 
-[node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller", "custcenes") instance=ExtResource("5_gdast")]
-transform = Transform3D(-0.9983703, 0, 0.05714296, 0, 1.0000001, 0, -0.05714322, 0, -0.9983658, -11.927178, -0.3380531, -22.003782)
+[node name="PlayerController" parent="MovementPath/PathController" unique_id=414205256 node_paths=PackedStringArray("path_controller") instance=ExtResource("5_gdast")]
+transform = Transform3D(-0.99836385, 0, 0.05714252, 0, 0.9999971, 0, -0.05714285, 0, -0.9983581, -11.927178, -0.3380531, -22.003782)
+top_level = true
 collision_mask = 3
 path_controller = NodePath("..")
-custcenes = NodePath("Cutscenes")
 
 [node name="Cutscenes" type="AnimationPlayer" parent="MovementPath/PathController/PlayerController" unique_id=998591472]
 root_node = NodePath("../../../..")
@@ -1182,3 +1278,19 @@ script = ExtResource("15_ha8ss")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1211499696]
 environment = SubResource("Environment_pitpm")
+
+[node name="entity_90_base_light2" type="OmniLight3D" parent="." unique_id=61203040]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -29.549564, 0.49416208, 19.863491)
+light_color = Color(0, 0, 1, 1)
+light_energy = 0.0
+omni_range = 7.0
+omni_attenuation = 0.25
+script = ExtResource("12_gsius")
+
+[node name="entity_90_base_light3" type="OmniLight3D" parent="." unique_id=140313434]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -28.659655, 0.29763174, 19.615852)
+light_color = Color(1, 0, 0, 1)
+light_energy = 0.0
+omni_range = 7.0
+omni_attenuation = 0.25
+script = ExtResource("12_gsius")
