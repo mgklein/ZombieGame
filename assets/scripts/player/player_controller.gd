@@ -1,3 +1,4 @@
+@tool
 class_name PlayerController extends CharacterBody3D
 
 @export var camera_effects: CameraEffects
@@ -5,12 +6,15 @@ class_name PlayerController extends CharacterBody3D
 @export var duration: float = 4.0 # Time in seconds to complete a path movement
 @export var num_stop_positions = 5
 @export var cutscenes: AnimationPlayer
+@export var enable_debug_move: bool = false
 
 @onready var health_component: HealthComponent = $HealthComponent
 
 var position_index: int = 0
 
 signal spawn_enemies(spawn_group: int)
+signal lock_camera()
+signal end_game()
 
 
 #func _ready() -> void:
@@ -57,10 +61,14 @@ func move_player():
 		cutscenes.active = true
 		print("play animation")
 		cutscenes.play("Start Cutscene")
+		lock_camera.emit()
+		await cutscenes.animation_finished
+		#await get_tree().create_timer(3.0).timeout
+		end_game.emit()
 
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("debug_move"):
+	if enable_debug_move and Input.is_action_just_pressed("debug_move"):
 		move_player()
 
 
