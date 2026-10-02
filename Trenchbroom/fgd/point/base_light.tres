@@ -9,5 +9,9 @@ script = ExtResource("2_071xn")
 script_class = ExtResource("3_071xn")
 classname = "base_light"
 description = "It's a base light"
+class_properties = Dictionary[String, Variant]({
+"turn_off_group": 1,
+"turn_on_group": 0
+})
 node_class = "OmniLight3D"
 metadata/_custom_type_script = "uid://cxsqwtsqd8w33"
