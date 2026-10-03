@@ -4,12 +4,15 @@
 [ext_resource type="Script" uid="uid://cwj0v4glchurc" path="res://assets/scripts/components/pause_manager.gd" id="2_qoi2i"]
 [ext_resource type="Script" uid="uid://chymym637dpvr" path="res://assets/scripts/components/game_over_manager.gd" id="3_bvk2m"]
 [ext_resource type="PackedScene" uid="uid://dsnlt5ek7an0c" path="res://scenes/system/main_menu.tscn" id="3_qoi2i"]
+[ext_resource type="PackedScene" uid="uid://b4hqgbp8qld0y" path="res://scenes/system/transition_controller.tscn" id="5_6aore"]
+[ext_resource type="Script" uid="uid://biq846ryiktmd" path="res://assets/scripts/system/transition_controller.gd" id="6_i0w0i"]
 
-[node name="GameController" type="Node" unique_id=1550936618 node_paths=PackedStringArray("level", "hud", "menu")]
+[node name="GameController" type="Node" unique_id=1550936618 node_paths=PackedStringArray("level", "hud", "menu", "transition_controller")]
 script = ExtResource("1_bvk2m")
 level = NodePath("Level")
 hud = NodePath("HUD")
 menu = NodePath("Menu")
+transition_controller = NodePath("TransitionController")
 
 [node name="Managers" type="Node" parent="." unique_id=1583284034]
 
@@ -33,3 +36,6 @@ grow_vertical = 2
 layout_mode = 1
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1238628640]
+
+[node name="TransitionController" parent="." unique_id=825712494 instance=ExtResource("5_6aore")]
+script = ExtResource("6_i0w0i")

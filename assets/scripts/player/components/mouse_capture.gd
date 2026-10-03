@@ -5,6 +5,7 @@ class_name MouseCaptureComponent extends Node
 @export var current_mouse_mode : Input.MouseMode = Input.MOUSE_MODE_CAPTURED
 @export var mouse_sensitivity : float = 0.005
 
+
 var _capture_mouse : bool
 var _mouse_input : Vector2
 
