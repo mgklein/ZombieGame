@@ -18,6 +18,7 @@ func _ready():
 	if turn_on_group > 0:
 		light_energy = 0
 
+
 func _func_godot_apply_properties(entity_properties: Dictionary) -> void:
 	turn_on_group = entity_properties["turn_on_group"] as int
 	turn_off_group = entity_properties["turn_off_group"] as int

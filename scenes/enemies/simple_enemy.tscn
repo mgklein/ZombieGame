@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="6_cf2kt"]
 [ext_resource type="AudioStream" uid="uid://dtt4k4x7sot2t" path="res://assets/audio/zombie c.mp3" id="8_fgow6"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pitpm"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
 albedo_color = Color(1, 0, 0, 1)
 
@@ -137,35 +139,39 @@ footsteps_player = NodePath("AudioStreamPlayer3D")
 [node name="zombie_with_modelsv1" parent="." unique_id=204081870 instance=ExtResource("2_fgow6")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
-[node name="Skeleton3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1" parent_id_path=PackedInt32Array(204081870, 927181809) index="0" unique_id=1933269626]
-bones/1/position = Vector3(-0.0005005388, 0.16456197, 0.77213335)
-bones/1/rotation = Quaternion(0.78118646, 0.06176686, 0.04660211, 0.61948436)
+[node name="Skeleton3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1" parent_id_path=PackedInt32Array(204081870, 1211093161) index="0" unique_id=1867207610]
+bones/1/position = Vector3(-0.0005005388, 0.15936269, 0.7918138)
+bones/1/rotation = Quaternion(0.7774825, 0.06180465, 0.04656473, 0.62412566)
 bones/2/rotation = Quaternion(-0.06470268, 1.6691011e-07, -1.0504785e-08, 0.9979046)
-bones/3/rotation = Quaternion(0.3733065, -0.15039323, 0.08858816, 0.91114014)
-bones/4/rotation = Quaternion(0.121357694, -0.11664411, 0.00033561673, 0.98573136)
-bones/5/rotation = Quaternion(0.073801614, 0.043102596, 0.03430141, 0.9957504)
-bones/6/rotation = Quaternion(-0.21388692, 0.06103844, -0.015274946, 0.9748299)
+bones/3/rotation = Quaternion(0.36784726, -0.1507281, 0.08878541, 0.9132834)
+bones/4/rotation = Quaternion(0.11490226, -0.116227224, 0.0007875179, 0.98655367)
+bones/5/rotation = Quaternion(0.079711944, 0.04287661, 0.033631798, 0.99532735)
+bones/6/rotation = Quaternion(-0.20920274, 0.06175349, -0.00948565, 0.9758744)
 bones/7/rotation = Quaternion(-0.016260564, 4.075927e-08, -2.0568482e-09, 0.9998678)
-bones/8/rotation = Quaternion(-0.61688256, -0.2758405, -0.41327733, 0.610385)
-bones/9/rotation = Quaternion(0.296625, 0.5899672, -0.6104736, 0.43734935)
-bones/10/rotation = Quaternion(0.16518691, -0.6089581, 0.12824439, 0.7651383)
+bones/8/rotation = Quaternion(-0.6191509, -0.2707695, -0.40345675, 0.6168944)
+bones/9/rotation = Quaternion(0.26714656, 0.58852696, -0.6394176, 0.41642994)
+bones/10/rotation = Quaternion(0.1866113, -0.58484715, 0.13572487, 0.7776302)
 bones/11/rotation = Quaternion(-0.15750407, 0.2740972, -0.19736972, 0.92795926)
-bones/12/rotation = Quaternion(-0.11508498, 0.70033646, 0.04775385, 0.7028541)
-bones/13/rotation = Quaternion(-0.6153507, 0.27728277, 0.41160214, 0.6124063)
-bones/14/rotation = Quaternion(0.21467045, -0.5987976, 0.65713793, 0.40438575)
-bones/15/rotation = Quaternion(0.43761212, 0.12516218, -0.058441672, 0.88849014)
+bones/12/rotation = Quaternion(-0.09743852, 0.7020238, 0.042344473, 0.7041842)
+bones/13/rotation = Quaternion(-0.6172341, 0.27473715, 0.4029917, 0.6173648)
+bones/14/rotation = Quaternion(0.17448987, -0.6116099, 0.6567113, 0.40523702)
+bones/15/rotation = Quaternion(0.42963544, 0.08155825, -0.035539404, 0.8986093)
 bones/16/rotation = Quaternion(-0.08213922, 0.03357309, 0.085039794, 0.9924184)
-bones/17/rotation = Quaternion(-0.115304545, -0.70032465, -0.047567777, 0.7028426)
-bones/18/rotation = Quaternion(0.85648906, -0.013499044, 0.0016643895, 0.5159861)
-bones/19/rotation = Quaternion(0.45539397, 0.10598948, -0.054392073, 0.88228357)
-bones/20/rotation = Quaternion(-0.52711797, -0.14722843, 0.013662874, 0.83682966)
+bones/17/rotation = Quaternion(-0.097455695, -0.7020311, -0.042118594, 0.704188)
+bones/18/rotation = Quaternion(0.8755682, -0.0071811145, 0.0008854004, 0.48304042)
+bones/19/rotation = Quaternion(0.41400298, 0.10580997, -0.04873731, 0.9027905)
+bones/20/rotation = Quaternion(-0.5154758, -0.14718924, 0.01329865, 0.8440636)
 bones/21/rotation = Quaternion(-0.00013712671, 0.96430665, -0.26478744, -0.0004995389)
 bones/22/rotation = Quaternion(-4.656613e-08, -3.2590822e-08, 3.6088248e-09, 1)
-bones/23/rotation = Quaternion(0.94126517, -0.17379542, 0.021428559, 0.28871426)
-bones/24/rotation = Quaternion(0.5245205, 0.16565599, -0.10357533, 0.8286788)
-bones/25/rotation = Quaternion(-0.739572, 0.06538739, -0.08262649, 0.6647787)
+bones/23/rotation = Quaternion(0.9520988, -0.16165328, 0.019931456, 0.2588027)
+bones/24/rotation = Quaternion(0.48272446, 0.17220819, -0.09738843, 0.8531337)
+bones/25/rotation = Quaternion(-0.72540724, 0.06552789, -0.082283735, 0.6802351)
 bones/26/rotation = Quaternion(-0.0001371366, 0.9643067, -0.26478744, -0.00049954536)
 bones/27/rotation = Quaternion(-3.1664968e-08, -3.261994e-08, -7.450586e-09, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1/Skeleton3D" index="2" unique_id=624252334]
+transform = Transform3D(12.018399, 0, 0, 0, 13.131528, 0, 0, 0, 0.99999976, 0, 1.0573533, 0.6149516)
+texture = SubResource("PlaceholderTexture2D_pitpm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=647515196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
