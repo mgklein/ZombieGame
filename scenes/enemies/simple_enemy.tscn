@@ -4,12 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://iecqn5kihws4" path="res://assets/Gunnie/Zombie Models/zombie_with_modelsv1.glb" id="2_fgow6"]
 [ext_resource type="Script" uid="uid://7ypbghoip3k0" path="res://assets/scripts/components/health_component.gd" id="2_ho7jy"]
 [ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="3_fgow6"]
+[ext_resource type="Texture2D" uid="uid://cbvaxlklnnisp" path="res://assets/flare.png" id="3_qwvii"]
 [ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="4_qwvii"]
 [ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="5_wlamu"]
 [ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="6_cf2kt"]
 [ext_resource type="AudioStream" uid="uid://dtt4k4x7sot2t" path="res://assets/audio/zombie c.mp3" id="8_fgow6"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_pitpm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o6bu6"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+disable_specular_occlusion = true
+albedo_texture = ExtResource("3_qwvii")
+disable_receive_shadows = true
+billboard_mode = 1
+billboard_keep_scale = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_riqys"]
 albedo_color = Color(1, 0, 0, 1)
@@ -140,38 +152,54 @@ footsteps_player = NodePath("AudioStreamPlayer3D")
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [node name="Skeleton3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1" parent_id_path=PackedInt32Array(204081870, 1211093161) index="0" unique_id=1867207610]
-bones/1/position = Vector3(-0.0005005388, 0.15936269, 0.7918138)
-bones/1/rotation = Quaternion(0.7774825, 0.06180465, 0.04656473, 0.62412566)
+bones/1/position = Vector3(-0.0005005388, 0.15664557, 0.8026596)
+bones/1/rotation = Quaternion(0.7760041, 0.061736263, 0.046613816, 0.62596613)
 bones/2/rotation = Quaternion(-0.06470268, 1.6691011e-07, -1.0504785e-08, 0.9979046)
-bones/3/rotation = Quaternion(0.36784726, -0.1507281, 0.08878541, 0.9132834)
-bones/4/rotation = Quaternion(0.11490226, -0.116227224, 0.0007875179, 0.98655367)
-bones/5/rotation = Quaternion(0.079711944, 0.04287661, 0.033631798, 0.99532735)
-bones/6/rotation = Quaternion(-0.20920274, 0.06175349, -0.00948565, 0.9758744)
+bones/3/rotation = Quaternion(0.35825706, -0.15112674, 0.08902023, 0.9169996)
+bones/4/rotation = Quaternion(0.1016235, -0.11581553, 0.0013039969, 0.98805755)
+bones/5/rotation = Quaternion(0.09169211, 0.042637724, 0.032903373, 0.9943299)
+bones/6/rotation = Quaternion(-0.19656315, 0.06105048, -0.010152475, 0.97853607)
 bones/7/rotation = Quaternion(-0.016260564, 4.075927e-08, -2.0568482e-09, 0.9998678)
-bones/8/rotation = Quaternion(-0.6191509, -0.2707695, -0.40345675, 0.6168944)
-bones/9/rotation = Quaternion(0.26714656, 0.58852696, -0.6394176, 0.41642994)
-bones/10/rotation = Quaternion(0.1866113, -0.58484715, 0.13572487, 0.7776302)
+bones/8/rotation = Quaternion(-0.6251864, -0.25400642, -0.37425923, 0.6360446)
+bones/9/rotation = Quaternion(0.23628317, 0.5832406, -0.6723183, 0.38985732)
+bones/10/rotation = Quaternion(0.18874933, -0.56053644, 0.12959246, 0.7958509)
 bones/11/rotation = Quaternion(-0.15750407, 0.2740972, -0.19736972, 0.92795926)
-bones/12/rotation = Quaternion(-0.09743852, 0.7020238, 0.042344473, 0.7041842)
-bones/13/rotation = Quaternion(-0.6172341, 0.27473715, 0.4029917, 0.6173648)
-bones/14/rotation = Quaternion(0.17448987, -0.6116099, 0.6567113, 0.40523702)
-bones/15/rotation = Quaternion(0.42963544, 0.08155825, -0.035539404, 0.8986093)
+bones/12/rotation = Quaternion(-0.09805253, 0.7019884, 0.042024072, 0.70415336)
+bones/13/rotation = Quaternion(-0.62352306, 0.26324096, 0.37742317, 0.6320404)
+bones/14/rotation = Quaternion(0.14697124, -0.61492777, 0.6652073, 0.39719325)
+bones/15/rotation = Quaternion(0.41781187, 0.044186335, -0.015126902, 0.9073324)
 bones/16/rotation = Quaternion(-0.08213922, 0.03357309, 0.085039794, 0.9924184)
-bones/17/rotation = Quaternion(-0.097455695, -0.7020311, -0.042118594, 0.704188)
-bones/18/rotation = Quaternion(0.8755682, -0.0071811145, 0.0008854004, 0.48304042)
-bones/19/rotation = Quaternion(0.41400298, 0.10580997, -0.04873731, 0.9027905)
-bones/20/rotation = Quaternion(-0.5154758, -0.14718924, 0.01329865, 0.8440636)
+bones/17/rotation = Quaternion(-0.08453556, -0.70313126, -0.037560035, 0.7050173)
+bones/18/rotation = Quaternion(0.88570637, -0.0035719683, 0.00044040155, 0.46423203)
+bones/19/rotation = Quaternion(0.39059657, 0.10564246, -0.04613247, 0.9133159)
+bones/20/rotation = Quaternion(-0.5097026, -0.14721163, 0.0133802155, 0.84755707)
 bones/21/rotation = Quaternion(-0.00013712671, 0.96430665, -0.26478744, -0.0004995389)
 bones/22/rotation = Quaternion(-4.656613e-08, -3.2590822e-08, 3.6088248e-09, 1)
-bones/23/rotation = Quaternion(0.9520988, -0.16165328, 0.019931456, 0.2588027)
-bones/24/rotation = Quaternion(0.48272446, 0.17220819, -0.09738843, 0.8531337)
-bones/25/rotation = Quaternion(-0.72540724, 0.06552789, -0.082283735, 0.6802351)
+bones/23/rotation = Quaternion(0.95764005, -0.15494236, 0.019104024, 0.24197866)
+bones/24/rotation = Quaternion(0.4597537, 0.17570159, -0.09361428, 0.8654432)
+bones/25/rotation = Quaternion(-0.71813184, 0.06560518, -0.08233248, 0.6878982)
 bones/26/rotation = Quaternion(-0.0001371366, 0.9643067, -0.26478744, -0.00049954536)
 bones/27/rotation = Quaternion(-3.1664968e-08, -3.261994e-08, -7.450586e-09, 1)
 
-[node name="Sprite3D" type="Sprite3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1/Skeleton3D" index="2" unique_id=624252334]
-transform = Transform3D(12.018399, 0, 0, 0, 13.131528, 0, 0, 0, 0.99999976, 0, 1.0573533, 0.6149516)
-texture = SubResource("PlaceholderTexture2D_pitpm")
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1/Skeleton3D" index="2" unique_id=624805952]
+transform = Transform3D(0.96105605, -0.22235629, -0.1641005, 0.03502646, 0.6870258, -0.7257879, 0.27412492, 0.6917747, 0.6680587, -0.095384374, 1.2681041, 0.24771398)
+bone_name = "head"
+bone_idx = 6
+
+[node name="Sprite3D" type="Sprite3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1/Skeleton3D/BoneAttachment3D" unique_id=147341339]
+transform = Transform3D(0.10541721, 0.008060167, 0.020290237, -0.019190658, 0.059989706, 0.030215811, -0.015424459, -0.019550862, 0.101078585, 0.045722455, 0.13086194, 0.13741529)
+material_override = SubResource("StandardMaterial3D_o6bu6")
+cast_shadow = 0
+gi_mode = 0
+visibility_range_end = 215.58
+modulate = Color(1, 0, 0, 1)
+billboard = 1
+shaded = true
+texture = ExtResource("3_qwvii")
+
+[node name="Sprite3D2" type="Sprite3D" parent="zombie_with_modelsv1/Node/Skinned_Mesh_1/Skeleton3D/BoneAttachment3D" unique_id=582723059]
+transform = Transform3D(0.108087964, -0.0010552169, -0.005679922, 0.0034063589, 0.060752966, 0.031644806, 0.004937496, -0.018813143, 0.10250816, -0.037592113, 0.13336235, 0.14012241)
+texture = ExtResource("3_qwvii")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=647515196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
