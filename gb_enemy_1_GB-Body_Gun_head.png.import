@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpqm4g0dq0e2a"
-path.s3tc="res://.godot/imported/ceilinglight_256px.png-43ab0daf9cd142f29e845e267559c95c.s3tc.ctex"
+uid="uid://bs4j0eenympq2"
+path.s3tc="res://.godot/imported/gb_enemy_1_GB-Body_Gun_head.png-94c84c463df0b668ea2fc2f95502c212.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "c3dac43a2b00b72c30ecbee3484abd92"
+}
 
 [deps]
 
-source_file="res://Trenchbroom/textures/bar/ceilinglight_256px.png"
-dest_files=["res://.godot/imported/ceilinglight_256px.png-43ab0daf9cd142f29e845e267559c95c.s3tc.ctex"]
+source_file="res://gb_enemy_1_GB-Body_Gun_head.png"
+dest_files=["res://.godot/imported/gb_enemy_1_GB-Body_Gun_head.png-94c84c463df0b668ea2fc2f95502c212.s3tc.ctex"]
 
 [params]
 

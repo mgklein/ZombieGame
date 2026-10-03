@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpqm4g0dq0e2a"
-path.s3tc="res://.godot/imported/ceilinglight_256px.png-43ab0daf9cd142f29e845e267559c95c.s3tc.ctex"
+uid="uid://cceansmdq8d4l"
+path.s3tc="res://.godot/imported/bar_stool_newstool_innerbook.png-7aec87833fff348a3b365f373ddcfcc8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "cf1ad846f957fd4e3c1df00728e00e1d"
+}
 
 [deps]
 
-source_file="res://Trenchbroom/textures/bar/ceilinglight_256px.png"
-dest_files=["res://.godot/imported/ceilinglight_256px.png-43ab0daf9cd142f29e845e267559c95c.s3tc.ctex"]
+source_file="res://bar_stool_newstool_innerbook.png"
+dest_files=["res://.godot/imported/bar_stool_newstool_innerbook.png-7aec87833fff348a3b365f373ddcfcc8.s3tc.ctex"]
 
 [params]
 
